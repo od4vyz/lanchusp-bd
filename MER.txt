@@ -1,0 +1,62 @@
+MODELO RELACIONAL
+
+Cliente:
+(CPF, ID, Nome)
+PK: CPF
+
+Funcionario:
+(CPF, Nome)
+PK: CPF
+
+Lanchonete:
+(Localizacao, Nome)
+PK: Localizacao
+
+Fornecedor:
+(Localizacao, Nome)
+PK: Localizacao
+
+Pedido:
+(Data/Hora, ClienteCPF, LanchoneteEnd, ValorTotal, MeioPagamento)
+PK: (Data/Hora, ClienteCPF, LanchoneteEnd)
+FK: ClienteCPF -> Cliente(CPF), LanchoneteEnd -> Lanchonete(Localizacao)
+
+Item:
+(Nome, LanchoneteEnd, Categoria)
+PK: (Nome, LanchoneteEnd)
+FK: LanchoneteEnd -> Lanchonete(Localizacao)
+
+Receita:
+(Nome, LanchoneteEnd, TempoPreparo)
+PK: (Nome, LanchoneteEnd)
+FK: Nome -> Item(Nome), LanchoneteEnd -> Item(LanchoneteEnd)
+
+ProdutoPronto:
+(Nome, LanchoneteEnd, QuantidadeDisponivel)
+PK: (Nome, LanchoneteEnd)
+FK: Nome -> Item(Nome), LanchoneteEnd -> Item(LanchoneteEnd)
+
+TrabalhaEm:
+(FuncionarioCPF, LanchoneteEnd, DataAdmissao, Cargo, Salario, HorarioEntrada, CargaHoraria)
+PK: (FuncionarioCPF, LanchoneteEnd)
+FK: FuncionarioCPF -> Funcionario(CPF) , LanchoneteEnd -> Lanchonete(Localizacao)
+
+CompoePedido:
+(Data/Hora, ClienteCPF, LanchoneteEnd, ItemNome, ItemEnd, Quantidade)
+PK: (Data/Hora, ClienteCPF, LanchoneteEnd, ItemNome, ItemEnd)
+FK: Data/Hora -> Pedido(Data/Hora), ClienteCPF -> Pedido(ClienteCPF), LanchoneteEnd -> Pedido(LanchoneteEnd), ItemNome -> Item(Nome), ItemEnd -> Item(LanchoneteEnd)
+
+LanchoneteVende:
+(LanchoneteEnd, ItemNome, ItemEnd, Preço)
+PK: (LanchoneteEnd, ItemNome, ItemEnd)
+FK: LanchoneteEnd -> Lanchonete(Localizacao), ItemNome -> Item(Nome), ItemEnd -> Item(LanchoneteEnd)
+
+CompoeReceita:
+(ReceitaNome, ReceitaEnd, ItemNome, ItemEnd, Quantidade)
+PK: (ReceitaNome, ReceitaEnd, ItemNome, ItemEnd)
+FK: ReceitaNome -> Receita(Nome), ReceitaEnd -> Receita(LanchoneteEnd), ItemNome -> Item(Nome), ItemEnd -> Item(LanchoneteEnd)
+
+ProdutoCompradoEm:
+(ProdutoNome, ProdutoEnd, FornecedorEnd, ValorUnit, Quantidade, Data/Hora)
+PK: (ProdutoNome, ProdutoEnd, ForncedorEnd)
+FK: ProdutoNome -> ProdutoPronto(Nome), ProdutoEnd -> ProdutoPronto(LanchoneteEnd), FornecedorEnd -> Fornecedor(Localizacao)
