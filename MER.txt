@@ -36,6 +36,11 @@ ProdutoPronto:
 PK: (Nome, LanchoneteEnd)
 FK: Nome -> Item(Nome), LanchoneteEnd -> Item(LanchoneteEnd)
 
+CompraProdutos:
+(Data/Hora, FornecedorEnd, ValorTotal)
+PK: (Data/Hora, FornecedorEnd)
+FK: FornecedorEnd -> Fornecedor(Localizacao)
+
 TrabalhaEm:
 (FuncionarioCPF, LanchoneteEnd, DataAdmissao, Cargo, Salario, HorarioEntrada, CargaHoraria)
 PK: (FuncionarioCPF, LanchoneteEnd)
