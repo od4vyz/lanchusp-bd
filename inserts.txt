@@ -1,9 +1,9 @@
 INSERT INTO Lanchonete (Localizacao, Nome) VALUES 
-('Av. Paulista, 1578 - Bela Vista', 'Lanchonete Paulista'),
-('Rua Funchal, 500 - Vila Olímpia', 'Burger Funchal'),
-('Rua Tuiuti, 1620 - Tatuapé', 'Tatuapé Lanches'),
-('Rua dos Pinheiros, 300 - Pinheiros', 'Pinheiros Gourmet'),
-('Av. Ibirapuera, 3103 - Moema', 'Moema Snacks');
+('Av. Paulista, 1578 - Bela Vista', 'Lanchusp Paulista'),
+('Rua Funchal, 500 - Vila Olímpia', 'Lanchusp Funchal'),
+('Rua Tuiuti, 1620 - Tatuapé', 'Lanchusp Tatuapé'),
+('Rua dos Pinheiros, 300 - Pinheiros', 'Lanchusp Pinheiros'),
+('Av. Ibirapuera, 3103 - Moema', 'Lanchusp Moema');
 
 INSERT INTO Cliente (CPF, Nome) VALUES 
 ('11122233301', 'João Silva'), 
