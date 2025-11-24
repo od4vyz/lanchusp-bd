@@ -29,11 +29,21 @@ class ClienteDatabase():
         statement = f"INSERT INTO cliente (CPF, nome) VALUES ('{cpf}', '{nome}');\n"
         return self.db.execute_statement(statement)
     
-    # Remove um cliente com base no número do cliente
+    # Remove um cliente com base no cpf, nome ou número do cliente
     def remove_cliente(self, cpf:str, nome:str, numero_cliente) -> bool:
         # Pra não deletar a tabela toda se não tiver parâmetro
         if cpf or nome or numero_cliente:
-            statement = "DELETE FROM cliente c"
+            statement = "DELETE FROM cliente c "
+            if cpf:
+                statement+=f"WHERE c.CPF = '{cpf}'\n" 
+            if nome:
+                if "WHERE" in statement:
+                    statement+=f"AND c.nome = '{nome}'\n"
+                else:
+                    statement+=f"WHERE c.nome = '{nome}'\n"
             if numero_cliente:
-                statement+=f"WHERE c.numero_cliente = {numero_cliente}"
+                if "WHERE" in statement:
+                    statement+=f"AND c.numero_cliente = {numero_cliente}\n"
+                else:
+                    statement+=f"WHERE c.numero_cliente = {numero_cliente}\n"
         return self.db.execute_statement(statement)

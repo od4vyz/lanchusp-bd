@@ -26,15 +26,15 @@ def insere_cliente():
 
     return jsonify("Cliente registrado com sucesso!"), 200
 
-# Remove um Cliente - Ainda não funciona
+# Remove um Cliente
 @cliente_blueprint.route("/cliente", methods=["DELETE"])
 def deleta_cliente():
     cpf = request.args.get("cpf", "")
     nome = request.args.get("nome", "")
     numero_cliente = request.args.get("numero_cliente", "")
-    registro = ClienteDatabase().remove_cliente(cpf, nome, numero_cliente)
+    delete = ClienteDatabase().remove_cliente(cpf, nome, numero_cliente)
 
-    if not registro:
-        return jsonify("Não foi possível remover o cliente"), 400
+    if not delete:
+        return jsonify("Não foi possível solicitar a remoção do cliente"), 400
 
-    return jsonify("Cliente removido com sucesso!"), 200
+    return jsonify("Remoção do Cliente solicitada com sucesso!"), 200
