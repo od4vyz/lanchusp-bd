@@ -38,3 +38,18 @@ def deleta_cliente():
         return jsonify("Não foi possível solicitar a remoção do cliente"), 400
 
     return jsonify("Remoção do Cliente solicitada com sucesso!"), 200
+
+# Atualiza um Cliente
+@cliente_blueprint.route("/cliente", methods=["PUT"])
+def atualiza_cliente():
+    cpf = request.args.get("cpf", "")
+    nome = request.args.get("nome", "")
+    numero_cliente = request.args.get("numero_cliente", "")
+    cpf_novo = request.args.get("cpf_novo", "")
+    nome_novo = request.args.get("nome_novo", "")
+    delete = ClienteDatabase().atualiza_cliente(cpf, cpf_novo, nome, nome_novo, numero_cliente)
+
+    if not delete:
+        return jsonify("Não foi possível solicitar a atualização do cliente"), 400
+
+    return jsonify("Atualização do Cliente solicitada com sucesso!"), 200
