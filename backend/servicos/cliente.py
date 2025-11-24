@@ -1,0 +1,39 @@
+from servicos.database.conector import DatabaseManager
+
+class ClienteDatabase():
+    def __init__(self, db_provider = DatabaseManager()):
+        self.db = db_provider
+
+    # Busca pelo cliente usando o cpf, nome ou número do cliente
+    def get_cliente(self, cpf: str, nome: str, numero_cliente):
+        query = """
+                SELECT * FROM cliente c
+                """
+        if cpf:
+            query+=f"WHERE c.CPF = '{cpf}'\n"
+        if nome:
+            if "WHERE" in query:
+                query+=f"AND c.nome = '{nome}'\n"
+            else:
+                query+=f"WHERE c.nome = '{nome}'\n"
+        if numero_cliente:
+            if "WHERE" in query:
+                query+=f"AND c.numero_cliente = {numero_cliente}\n"
+            else:
+                query+=f"WHERE c.numero_cliente = {numero_cliente}\n"
+
+        return self.db.execute_select_all(query)
+    
+    # Registra um novo cliente no Banco de Dados
+    def regristra_cliente(self, cpf:str, nome:str) -> bool:
+        statement = f"INSERT INTO cliente (CPF, nome) VALUES ('{cpf}', '{nome}');\n"
+        return self.db.execute_statement(statement)
+    
+    # Remove um cliente com base no número do cliente
+    def remove_cliente(self, cpf:str, nome:str, numero_cliente) -> bool:
+        # Pra não deletar a tabela toda se não tiver parâmetro
+        if cpf or nome or numero_cliente:
+            statement = "DELETE FROM cliente c"
+            if numero_cliente:
+                statement+=f"WHERE c.numero_cliente = {numero_cliente}"
+        return self.db.execute_statement(statement)

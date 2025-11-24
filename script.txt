@@ -190,7 +190,7 @@ INSERT INTO Funcionario (CPF, nome) VALUES
 ('55555555550', 'Óscar Valente'),
 ('56565656560', 'Rafael Pimenta'),
 ('57575757570', 'Gabriela Fontes'),
-('58585858580', 'Henrique Matos'),
+('58585858580', 'Henrique Matos');
 
 INSERT INTO Lanchonete (localizacao, nome) VALUES
 ('Rua Arlindo Béttio, 1000 - Ermelino Matarazzo, São Paulo - SP', 'LanchUSP Legal'),
@@ -217,7 +217,7 @@ INSERT INTO Lanchonete (localizacao, nome) VALUES
 ('Av. Bandeirantes, 3901 - Vila Monte Alegre, Ribeirão Preto - SP', 'LanchUSP Bacana!'),
 ('Av. Bandeirantes, 3902 - Vila Monte Alegre, Ribeirão Preto - SP', 'LanchUSP Legal Demais'),
 ('Av. Bandeirantes, 3903 - Vila Monte Alegre, Ribeirão Preto - SP', 'LanchUSP'),
-('Av. Bandeirantes, 3904 - Vila Monte Alegre, Ribeirão Preto - SP', 'Lanches da USP'),
+('Av. Bandeirantes, 3904 - Vila Monte Alegre, Ribeirão Preto - SP', 'Lanches da USP');
 
 INSERT INTO Fornecedor (localizacao, nome) VALUES
 ('Rua do Açúcar, 1', 'Doce Vida Distribuidora'),

@@ -8,3 +8,18 @@ Requisitos:
 - PostgreSQL 18: https://www.postgresql.org/download/  
 - Microsoft Build Tools: https://visualstudio.microsoft.com/pt-br/visual-cpp-build-tools/
   - Desktop development with C++
+
+## Configuração do Ambiente
+Na pasta backend:
+```bash
+python -m venv venv 
+.\venv\Scripts\activate
+pip install -r requirements.txt
+```  
+Criar uma Database no PostgreSQL com o nome "lanchusp"  
+Configurar em backend\servicos\database\conector.py o usuário e senha do seu pgAdmin  
+
+## Execução Backend
+```bash
+python main.py
+```
