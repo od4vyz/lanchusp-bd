@@ -35,3 +35,17 @@ def deleta_funcionario():
         return jsonify("Não foi possível solicitar a remoção do funcionário"), 400
 
     return jsonify("Remoção do funcionário solicitada com sucesso!"), 200
+
+# Atualiza um Cliente
+@funcionario_blueprint.route("/funcionario", methods=["PUT"])
+def atualiza_funcionário():
+    cpf = request.args.get("cpf", "")
+    nome = request.args.get("nome", "")
+    cpf_novo = request.args.get("cpf_novo", "")
+    nome_novo = request.args.get("nome_novo", "")
+    delete = FuncionarioDatabase().atualiza_funcionario(cpf, cpf_novo, nome, nome_novo)
+
+    if not delete:
+        return jsonify("Não foi possível solicitar a atualização do funcionário"), 400
+
+    return jsonify("Atualização do funcionário solicitada com sucesso!"), 200

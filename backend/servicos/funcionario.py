@@ -37,3 +37,25 @@ class FuncionarioDatabase():
                 else:
                     statement+=f"WHERE f.nome = '{nome}'\n"
         return self.db.execute_statement(statement)
+    
+    # Atualiza um Funcionario com base no cpf ou nome
+    def atualiza_funcionario(self, cpf:str, cpf_novo:str, nome:str, nome_novo:str) -> bool:
+        statement = "UPDATE Funcionario f "
+        # SET
+        if cpf_novo:
+            statement+=f"SET CPF= '{cpf_novo}'\n" 
+        if nome_novo:
+            if "SET" in statement:
+                statement+=f", nome = '{nome_novo}'\n"
+            else:
+                statement+=f"SET nome = '{nome_novo}'\n"
+        # WHERE
+        if cpf:
+            statement+=f"WHERE f.CPF = '{cpf}'\n" 
+        if nome:
+            if "WHERE" in statement:
+                statement+=f"AND f.nome = '{nome}'\n"
+            else:
+                statement+=f"WHERE f.nome = '{nome}'\n"
+            
+        return self.db.execute_statement(statement)
