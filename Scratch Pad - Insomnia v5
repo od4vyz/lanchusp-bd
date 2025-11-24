@@ -336,7 +336,7 @@ collection:
     meta:
       id: req_8710c940452245069ffbb2d5508a90a1
       created: 1763955846347
-      modified: 1764020605433
+      modified: 1764023363496
       isPrivate: false
       description: ""
       sortKey: -1763953370049
@@ -345,7 +345,7 @@ collection:
       mimeType: application/json
       text: |-
         {
-        	"nome":"Açaí"
+        	"nome":"Açaí 500ml"
         }
     headers:
       - name: Content-Type
@@ -367,14 +367,14 @@ collection:
     meta:
       id: req_0b87c624e10145a0ac6d6888a4766593
       created: 1763955995560
-      modified: 1764020616143
+      modified: 1764022923777
       isPrivate: false
       description: ""
       sortKey: -1763953370099
     method: DELETE
     parameters:
       - name: nome
-        value: Água (500ml)
+        value: None
         description: ""
         disabled: false
     headers:
@@ -535,6 +535,275 @@ collection:
         disabled: false
       - name: nome_novo
         value: Açaí Grande
+        description: ""
+        disabled: false
+    headers:
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/receita
+    name: Receita
+    meta:
+      id: req_8254026393b44e9eb6d9073ec2ac40f8
+      created: 1764021817761
+      modified: 1764021839371
+      isPrivate: false
+      description: ""
+      sortKey: -1763953370299
+    method: GET
+    parameters:
+      - name: nome
+        value: Queijo Prato
+        description: ""
+        disabled: true
+      - name: categoria
+        value: ""
+        description: ""
+        disabled: true
+    headers:
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/receita
+    name: Receita
+    meta:
+      id: req_2bb58c61d0e14ea3bb47fbf07a536794
+      created: 1764022826758
+      modified: 1764023389587
+      isPrivate: false
+      description: ""
+      sortKey: -1763953370399
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"Nome_Item":"Açaí 500ml",
+        	"Categoria": "Sobremesa",
+        	"Tempo_Medio_Preparo": 5
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/receita
+    name: Receita
+    meta:
+      id: req_d5aa7c612255426a9878bb44f48ad031
+      created: 1764023319320
+      modified: 1764023421879
+      isPrivate: false
+      description: ""
+      sortKey: -1763953370499
+    method: DELETE
+    parameters:
+      - name: nome
+        value: Açaí
+        description: ""
+        disabled: true
+      - name: categoria
+        value: Sobremesa
+        description: ""
+        disabled: false
+    headers:
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/receita
+    name: Receita
+    meta:
+      id: req_b606b65f706d40f2a6f77c777c611da0
+      created: 1764024000473
+      modified: 1764024087999
+      isPrivate: false
+      description: ""
+      sortKey: -1763953370599
+    method: PUT
+    parameters:
+      - name: nome
+        value: Açaí 500ml
+        description: ""
+        disabled: false
+      - name: nome_novo
+        value: Açaí 200ml
+        description: ""
+        disabled: false
+      - name: categoria_nova
+        value: Sobremesas
+        description: ""
+        disabled: false
+      - name: tempo_medio_preparo
+        value: "12"
+        description: ""
+        disabled: false
+    headers:
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/produtoPronto
+    name: Produto_Pronto
+    meta:
+      id: req_355fd4921e614fad8e7e87922b1b6768
+      created: 1764024454153
+      modified: 1764024788478
+      isPrivate: false
+      description: ""
+      sortKey: -1763953370699
+    method: GET
+    parameters:
+      - name: nome
+        value: Água Mineral
+        description: ""
+        disabled: true
+      - name: categoria
+        value: Bebida
+        description: ""
+        disabled: true
+    headers:
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/produtoPronto
+    name: Produto_Pronto
+    meta:
+      id: req_0c55c0334992401d80bee0c9c48bb8e6
+      created: 1764024751439
+      modified: 1764024806249
+      isPrivate: false
+      description: ""
+      sortKey: -1763953370799
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"Nome_Item":"Açaí 200ml",
+        	"Categoria": "Sobremesa"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/produtoPronto
+    name: Produto_Pronto
+    meta:
+      id: req_77425e4a68fb4139ba6b567c7eb8da30
+      created: 1764025378310
+      modified: 1764025407191
+      isPrivate: false
+      description: ""
+      sortKey: -1763953370899
+    method: DELETE
+    parameters:
+      - name: nome
+        value: Açaí 200ml
+        description: ""
+        disabled: true
+      - name: categoria
+        value: Sobremesa
+        description: ""
+        disabled: false
+    headers:
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/produtoPronto
+    name: Produto_Pronto
+    meta:
+      id: req_5a7f5a5bd3f9471c9de3720f3ff1aa99
+      created: 1764025709832
+      modified: 1764025741656
+      isPrivate: false
+      description: ""
+      sortKey: -1763953370999
+    method: PUT
+    parameters:
+      - name: nome
+        value: Açaí 200ml
+        description: ""
+        disabled: false
+      - name: nome_novo
+        value: Açaí 500ml
+        description: ""
+        disabled: false
+      - name: categoria_nova
+        value: Sobremesas
         description: ""
         disabled: false
     headers:

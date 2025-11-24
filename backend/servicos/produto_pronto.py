@@ -38,3 +38,20 @@ class ProdutoProntoDatabase():
                     statement+=f"WHERE pp.Categoria = '{categoria}'\n"
             
         return self.db.execute_statement(statement)
+    
+    # Atualiza um Produto_Pronto com base no nome
+    def atualiza_produtoPronto(self, nome:str, nome_novo:str, categoria_nova:str) -> bool:
+        statement = "UPDATE Produto_Pronto pp "
+        # SET
+        if nome_novo:
+            statement+=f"SET Nome_Item= '{nome_novo}'\n" 
+        if categoria_nova:
+            if "SET" in statement:
+                statement+=f", Categoria = '{categoria_nova}'\n"
+            else:
+                statement+=f"SET Categoria = '{categoria_nova}'\n"
+        # WHERE
+        if nome:
+            statement+=f"WHERE pp.Nome_Item = '{nome}'\n" 
+            
+        return self.db.execute_statement(statement)
