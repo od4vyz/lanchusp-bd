@@ -21,6 +21,7 @@ Criar uma Database no PostgreSQL com o nome "lanchusp"
 Configurar em backend\servicos\database\conector.py o usuário e senha do seu pgAdmin  
 
 ## Execução Backend
+Na pasta backend:
 ```bash
 python main.py
 ```
