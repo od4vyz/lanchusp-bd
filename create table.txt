@@ -1,0 +1,174 @@
+-- 1. CLIENTE
+CREATE TABLE Cliente (
+    CPF CHAR(11) NOT NULL,
+    Nome VARCHAR(100) NOT NULL,
+    ID SERIAL NOT NULL UNIQUE, 
+    CONSTRAINT PK_Cliente PRIMARY KEY (CPF)
+);
+
+-- 2. FUNCIONARIO
+CREATE TABLE Funcionario (
+    CPF CHAR(11) NOT NULL,
+    Nome VARCHAR(100) NOT NULL,
+    CONSTRAINT PK_Funcionario PRIMARY KEY (CPF)
+);
+
+-- 3. LANCHONETE
+CREATE TABLE Lanchonete (
+    Localizacao VARCHAR(100) NOT NULL,
+    Nome VARCHAR(100) NOT NULL,
+    CONSTRAINT PK_Lanchonete PRIMARY KEY (Localizacao)
+);
+
+-- 4. ITEM
+CREATE TABLE Item (
+    Nome VARCHAR(100) NOT NULL,
+    CONSTRAINT PK_Item PRIMARY KEY (Nome)
+);
+
+-- 5. PEDIDO (Entidade Fraca)
+CREATE TABLE Pedido (
+    CPF_Cliente CHAR(11) NOT NULL,
+    Localizacao_Lanchonete VARCHAR(100) NOT NULL,
+    Data DATE NOT NULL,
+    Hora TIME NOT NULL,
+    MeioPagamento VARCHAR(50),
+    Valor DECIMAL(10, 2),
+    
+    CONSTRAINT PK_Pedido PRIMARY KEY (CPF_Cliente, Localizacao_Lanchonete, Data, Hora),
+    
+    CONSTRAINT FK_Pedido_Cliente FOREIGN KEY (CPF_Cliente) 
+        REFERENCES Cliente(CPF)
+        ON UPDATE CASCADE 
+        ON DELETE RESTRICT,
+        
+    CONSTRAINT FK_Pedido_Lanchonete FOREIGN KEY (Localizacao_Lanchonete) 
+        REFERENCES Lanchonete(Localizacao)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+);
+
+-- 6. COMPRA (Entidade Fraca)
+CREATE TABLE Compra (
+    Nome_Item VARCHAR(100) NOT NULL,
+    Data_Hora TIMESTAMP NOT NULL,
+    Quantidade INT NOT NULL,
+    Valor_Unit DECIMAL(10, 2) NOT NULL,
+    
+    CONSTRAINT PK_Compra PRIMARY KEY (Nome_Item, Data_Hora),
+    
+    CONSTRAINT FK_Compra_Item FOREIGN KEY (Nome_Item) 
+        REFERENCES Item(Nome)
+        ON UPDATE CASCADE
+        ON DELETE CASCADE
+);
+
+-- 7. TRABALHA_EM (Relacionamento M:N)
+CREATE TABLE Trabalha_Em (
+    CPF_Funcionario CHAR(11) NOT NULL,
+    Localizacao_Lanchonete VARCHAR(100) NOT NULL,
+	Data_admissao DATE NOT NULL,
+    Cargo VARCHAR(50),
+    Salario DECIMAL(10, 2),
+    Carga_Horaria INT,
+    Horario_entrada TIME,
+    
+    CONSTRAINT PK_Trabalha_Em PRIMARY KEY (CPF_Funcionario, Localizacao_Lanchonete),
+    
+    CONSTRAINT FK_Trabalha_Funcionario FOREIGN KEY (CPF_Funcionario) 
+        REFERENCES Funcionario(CPF)
+        ON UPDATE CASCADE
+        ON DELETE CASCADE, 
+        
+    CONSTRAINT FK_Trabalha_Lanchonete FOREIGN KEY (Localizacao_Lanchonete) 
+        REFERENCES Lanchonete(Localizacao)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+);
+
+-- 8. VENDE
+CREATE TABLE Vende (
+    Localizacao_Lanchonete VARCHAR(100) NOT NULL,
+    Nome_Item VARCHAR(100) NOT NULL,
+    Preco DECIMAL(10, 2) NOT NULL,
+    
+    CONSTRAINT PK_Vende PRIMARY KEY (Localizacao_Lanchonete, Nome_Item),
+    
+    CONSTRAINT FK_Vende_Lanchonete FOREIGN KEY (Localizacao_Lanchonete) 
+        REFERENCES Lanchonete(Localizacao)
+        ON UPDATE CASCADE
+        ON DELETE CASCADE,
+        
+    CONSTRAINT FK_Vende_Item FOREIGN KEY (Nome_Item) 
+        REFERENCES Item(Nome)
+        ON UPDATE CASCADE
+        ON DELETE CASCADE
+);
+
+-- 9. CONTEM 
+CREATE TABLE Contem (
+    CPF_Cliente CHAR(11) NOT NULL,
+    Localizacao_Lanchonete VARCHAR(100) NOT NULL,
+    Data_Pedido DATE NOT NULL,
+    Hora_Pedido TIME NOT NULL,
+    Nome_Item VARCHAR(100) NOT NULL,
+    Quantidade INT NOT NULL,
+    
+    CONSTRAINT PK_Contem PRIMARY KEY (CPF_Cliente, Localizacao_Lanchonete, Data_Pedido, Hora_Pedido, Nome_Item),
+    
+    CONSTRAINT FK_Contem_Pedido FOREIGN KEY (CPF_Cliente, Localizacao_Lanchonete, Data_Pedido, Hora_Pedido) 
+        REFERENCES Pedido(CPF_Cliente, Localizacao_Lanchonete, Data, Hora)
+        ON UPDATE CASCADE
+        ON DELETE CASCADE,
+        
+    CONSTRAINT FK_Contem_Item FOREIGN KEY (Nome_Item) 
+        REFERENCES Item(Nome)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+);
+
+-- 10. UTILIZA
+CREATE TABLE Utiliza (
+    Nome_Produto VARCHAR(100) NOT NULL,     
+    Nome_Ingrediente VARCHAR(100) NOT NULL, 
+    Quantidade INT NOT NULL, 
+    
+    CONSTRAINT PK_Utiliza PRIMARY KEY (Nome_Produto, Nome_Ingrediente),
+    
+    CONSTRAINT FK_Utiliza_Produto FOREIGN KEY (Nome_Produto) 
+        REFERENCES Item(Nome)
+        ON UPDATE CASCADE
+        ON DELETE CASCADE,
+        
+    CONSTRAINT FK_Utiliza_Ingrediente FOREIGN KEY (Nome_Ingrediente) 
+        REFERENCES Item(Nome)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT 
+);
+
+-- 11. RECEITA (Especialização de Item)
+CREATE TABLE Receita (
+    Nome_Item VARCHAR(100) NOT NULL,
+    Categoria VARCHAR(50),
+    Tempo_Medio_Preparo INTERVAL,
+    
+    CONSTRAINT PK_Receita PRIMARY KEY (Nome_Item),
+    
+    CONSTRAINT FK_Receita_Item FOREIGN KEY (Nome_Item) 
+        REFERENCES Item(Nome)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
+
+-- 12. PRODUTO_PRONTO (Especialização de Item)
+CREATE TABLE Produto_Pronto (
+    Nome_Item VARCHAR(100) NOT NULL,
+    Categoria VARCHAR(50),
+    
+    CONSTRAINT PK_Produto_Pronto PRIMARY KEY (Nome_Item),
+    
+    CONSTRAINT FK_Produto_Item FOREIGN KEY (Nome_Item) 
+        REFERENCES Item(Nome)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
