@@ -1,0 +1,576 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1760912392609
+  modified: 1760912392609
+  description: ""
+collection:
+  - url: http://127.0.0.1:8000/cliente
+    name: Cliente
+    meta:
+      id: req_a4083e70b826431baaebc0097b73238e
+      created: 1763936280681
+      modified: 1763988574965
+      isPrivate: false
+      description: ""
+      sortKey: -1763937730512
+    method: GET
+    parameters:
+      - name: cpf
+        value: "11111111111"
+        description: ""
+        disabled: true
+      - name: nome
+        value: Heloisa Santos
+        description: ""
+        disabled: true
+      - name: numero_cliente
+        value: "7"
+        description: ""
+        disabled: false
+    headers:
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/cliente
+    name: Cliente
+    meta:
+      id: req_ac13e42e2a3f4566880d153fce187cce
+      created: 1763937730612
+      modified: 1763950442395
+      isPrivate: false
+      description: ""
+      sortKey: -1763937730612
+    method: DELETE
+    parameters:
+      - name: cpf
+        value: "66666666666"
+        description: ""
+        disabled: false
+      - name: nome
+        value: Eduardo Mendes
+        description: ""
+        disabled: true
+      - name: numero_cliente
+        value: "5"
+        description: ""
+        disabled: true
+    headers:
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/cliente
+    name: Cliente
+    meta:
+      id: req_047e58e9b2b445e7a816936ca9c7c18f
+      created: 1763941738703
+      modified: 1763988475159
+      isPrivate: false
+      description: ""
+      sortKey: -1763937730562
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"CPF": "8",
+        	"nome": "André Portela"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/funcionario
+    name: Funcionário
+    meta:
+      id: req_c27a2790291349ca966f07e9b24a726f
+      created: 1763951385920
+      modified: 1763951650281
+      isPrivate: false
+      description: ""
+      sortKey: -1763951385920
+    method: GET
+    parameters:
+      - name: cpf
+        value: "67         "
+        description: ""
+        disabled: true
+      - name: nome
+        value: André Portela
+        description: ""
+        disabled: false
+    headers:
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/funcionario
+    name: Funcionário
+    meta:
+      id: req_2d1e7d82acc242cc870668ad956d259b
+      created: 1763951448779
+      modified: 1763951532268
+      isPrivate: false
+      description: ""
+      sortKey: -1763951448779
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"CPF": "67",
+        	"nome": "André Portela Lino"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/funcionario
+    name: Funcionário
+    meta:
+      id: req_8147b321b60d4dc796183b6281be07ff
+      created: 1763951555733
+      modified: 1763951658438
+      isPrivate: false
+      description: ""
+      sortKey: -1763951555733
+    method: DELETE
+    parameters:
+      - name: cpf
+        value: "67         "
+        description: ""
+        disabled: true
+      - name: nome
+        value: André Portela
+        description: ""
+        disabled: false
+    headers:
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/lanchonete
+    name: Lanchonete
+    meta:
+      id: req_31b97caf0a6e4dce82c7edf305ce176e
+      created: 1763953135554
+      modified: 1763953503176
+      isPrivate: false
+      description: ""
+      sortKey: -1763953135554
+    method: GET
+    parameters:
+      - name: localizacao
+        value: Rua 11
+        description: ""
+        disabled: false
+      - name: nome
+        value: Lanchusp
+        description: ""
+        disabled: true
+    headers:
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/lanchonete
+    name: Lanchonete
+    meta:
+      id: req_921f9eb346f6484a8995f2fe1033419d
+      created: 1763953232409
+      modified: 1763955923855
+      isPrivate: false
+      description: ""
+      sortKey: -1763953232409
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"localizacao": "Rua 10",
+        	"nome": "Lanchusp Legal"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/lanchonete
+    name: Lanchonete
+    meta:
+      id: req_85a4c709fd604165ae78fd12595339f7
+      created: 1763953369649
+      modified: 1763953510635
+      isPrivate: false
+      description: ""
+      sortKey: -1763953369649
+    method: DELETE
+    parameters:
+      - name: localizacao
+        value: Rua 11
+        description: ""
+        disabled: false
+      - name: nome
+        value: Lanchusp
+        description: ""
+        disabled: true
+    headers:
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/fornecedor
+    name: Fornecedor
+    meta:
+      id: req_086c03b7a9954bba9800028d71d23c7d
+      created: 1763954076663
+      modified: 1763955514823
+      isPrivate: false
+      description: ""
+      sortKey: -1763953369749
+    method: GET
+    parameters:
+      - name: localizacao
+        value: Rua do Milho, 2
+        description: ""
+        disabled: false
+      - name: nome
+        value: Lacteos Puro
+        description: ""
+        disabled: true
+    headers:
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/fornecedor
+    name: Fornecedor
+    meta:
+      id: req_81c20e0c84a642ee91fdbae848ddecf2
+      created: 1763954195554
+      modified: 1763954288303
+      isPrivate: false
+      description: ""
+      sortKey: -1763953369849
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"localizacao": "Rua do Milho, 2",
+        	"nome": "Ponto do Milho"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/fornecedor
+    name: Fornecedor
+    meta:
+      id: req_303bee8aed084e989c52b1bf55e13eb9
+      created: 1763954244740
+      modified: 1763954314430
+      isPrivate: false
+      description: ""
+      sortKey: -1763953369949
+    method: DELETE
+    parameters:
+      - name: localizacao
+        value: Rua do Milho, 2
+        description: ""
+        disabled: false
+      - name: nome
+        value: Ponto do Milho
+        description: ""
+        disabled: false
+    headers:
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/item
+    name: Item
+    meta:
+      id: req_2181057b1fe548dab36b0b990997c743
+      created: 1763955494948
+      modified: 1763956450112
+      isPrivate: false
+      description: ""
+      sortKey: -1763953369999
+    method: GET
+    parameters:
+      - name: categoria
+        value: Água com Gás
+        description: ""
+        disabled: true
+      - name: lanchonete_end
+        value: Rua 10
+        description: ""
+        disabled: true
+      - name: nome
+        value: Água com Gás (200ml)
+        description: ""
+        disabled: true
+    headers:
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/item
+    name: Item
+    meta:
+      id: req_8710c940452245069ffbb2d5508a90a1
+      created: 1763955846347
+      modified: 1763956388817
+      isPrivate: false
+      description: ""
+      sortKey: -1763953370049
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"nome":"Água (500ml)",
+        	"lanchonete_end": "Rua 10",
+        	"categoria":"Água"
+        }
+    parameters:
+      - name: categoria
+        value: Ingrediente
+        description: ""
+        disabled: true
+      - name: lanchonete
+        value: Av. Bandeirantes, 3903 - Vila Monte Alegre, Ribeirão Preto - SP
+        description: ""
+        disabled: true
+      - name: nome
+        value: Água (copo)
+        description: ""
+        disabled: true
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/item
+    name: Item
+    meta:
+      id: req_0b87c624e10145a0ac6d6888a4766593
+      created: 1763955995560
+      modified: 1763956440753
+      isPrivate: false
+      description: ""
+      sortKey: -1763953370099
+    method: DELETE
+    parameters:
+      - name: categoria
+        value: Água com Gás
+        description: ""
+        disabled: true
+      - name: lanchonete_end
+        value: Rua 10
+        description: ""
+        disabled: false
+      - name: nome
+        value: Água (500ml)
+        description: ""
+        disabled: true
+    headers:
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/cliente
+    name: Cliente
+    meta:
+      id: req_f233e97300cf4718a1525de291becc9c
+      created: 1763988253944
+      modified: 1763989040407
+      isPrivate: false
+      description: ""
+      sortKey: -1763948974115.75
+    method: PUT
+    parameters:
+      - name: cpf
+        value: "77777777777"
+        description: ""
+        disabled: false
+      - name: nome
+        value: Gustavo Lanches
+        description: ""
+        disabled: false
+      - name: numero_cliente
+        value: "7"
+        description: ""
+        disabled: false
+      - name: cpf_novo
+        value: "77777777714"
+        description: ""
+        disabled: false
+      - name: nome_novo
+        value: Gustavo Pereira
+        description: ""
+        disabled: false
+    headers:
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1760912490152
+    modified: 1760912490152
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1760912490150
+    modified: 1760912490150
+    isPrivate: false
