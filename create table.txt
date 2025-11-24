@@ -150,7 +150,7 @@ CREATE TABLE Utiliza (
 CREATE TABLE Receita (
     Nome_Item VARCHAR(100) NOT NULL,
     Categoria VARCHAR(50),
-    Tempo_Medio_Preparo INTERVAL,
+    Tempo_Medio_Preparo INT, -- Minutos
     
     CONSTRAINT PK_Receita PRIMARY KEY (Nome_Item),
     

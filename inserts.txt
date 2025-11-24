@@ -161,12 +161,12 @@ INSERT INTO Vende (Localizacao_Lanchonete, Nome_Item, Preco) VALUES
 ('Av. Ibirapuera, 3103 - Moema', 'Milkshake Chocolate', 24.00);
 
 INSERT INTO Receita (Nome_Item, Categoria, Tempo_Medio_Preparo) VALUES
-('X-Salada', 'Lanche', '15 minutes'),
-('X-Bacon', 'Lanche', '18 minutes'),
-('X-Burger', 'Lanche', '12 minutes'),
-('Batata Frita Grande', 'Porção', '10 minutes'),
-('Milkshake Chocolate', 'Bebida', '8 minutes'),
-('Café Expresso', 'Bebida', '3 minutes');
+('X-Salada', 'Lanche', 15),
+('X-Bacon', 'Lanche', 18),
+('X-Burger', 'Lanche', 12),
+('Batata Frita Grande', 'Porção', 10),
+('Milkshake Chocolate', 'Bebida', 8),
+('Café Expresso', 'Bebida', 3);
 
 INSERT INTO Produto_Pronto (Nome_Item, Categoria) VALUES
 ('Coxinha de Frango', 'Salgado'),
