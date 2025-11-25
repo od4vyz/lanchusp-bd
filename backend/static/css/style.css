@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Cor de fundo bege claro da imagem */
+    background-color: #F0EAD6;
+    /* Fonte sans-serif limpa */
+    font-family: 'Roboto', sans-serif;
+    /* Centraliza o conteúdo principal horizontalmente */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Garante que ocupa a altura total da tela */
+    padding: 40px 20px; /* Espaçamento interno nas bordas da tela */
+    color: #333; /* Cor de texto padrão */
+}
+
+/* Estilo da Logo */
+.logo {
+    max-width: 250px; /* Ajuste o tamanho da logo conforme necessário */
+    height: auto;
+    margin-bottom: 40px; /* Espaço abaixo da logo */
+}
+
+/* Título Principal H1 */
+h1 {
+    font-size: 1.8rem;
+    font-weight: 900; /* Negrito forte */
+    margin-bottom: 30px;
+    text-align: center;
+    color: #000;
+}
+
+/* Container do Grid (a área que segura todos os cartões) */
+.grid-filiais {
+    display: grid;
+    /* Cria colunas responsivas. Tenta colocar 3 colunas, mas se a tela for pequena,
+       os cartões terão no mínimo 280px de largura e se ajustarão. */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px; /* Espaço entre os cartões (horizontal e vertical) */
+    width: 100%;
+    max-width: 1100px; /* Largura máxima para não ficar muito esticado em telas gigantes */
+    justify-content: center;
+}
+
+/* Estilo do Cartão Individual */
+.card-filial {
+    background-color: #FFFFFF; /* Fundo branco */
+    border-radius: 15px; /* Cantos arredondados */
+    /* Sombra suave para dar o efeito de "levantado" */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza o efeito de hover */
+    overflow: hidden; /* Garante que o conteúdo não vaze dos cantos arredondados */
+}
+
+/* Efeito ao passar o mouse sobre o cartão (opcional, mas fica bonito) */
+.card-filial:hover {
+    transform: translateY(-5px); /* Levanta ligeiramente o cartão */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12); /* Aumenta a sombra */
+}
+
+/* Estilo do Link dentro do cartão */
+/* O link ocupa todo o espaço do cartão para tornar a área inteira clicável */
+.card-filial a {
+    display: block;
+    padding: 30px; /* Espaçamento interno generoso */
+    text-decoration: none; /* Remove o sublinhado padrão de links */
+    color: inherit; /* Herda a cor do texto definida no body */
+    height: 100%;
+    text-align: left; /* O texto dentro dos cartões é alinhado à esquerda */
+}
+
+/* Título da Filial (H3) dentro do cartão */
+.card-filial h3 {
+    font-size: 1.3rem;
+    font-weight: 900; /* Negrito forte */
+    margin-bottom: 15px;
+    color: #000; /* Cor preta sólida */
+}
+
+/* Endereço da Filial (P) dentro do cartão */
+.card-filial p {
+    font-size: 1rem;
+    color: #555; /* Cinza um pouco mais claro para o endereço */
+    line-height: 1.5; /* Melhor leitura */
+}
+
+/* Estilo para caso não haja filiais */
+.sem-resultado {
+    text-align: center;
+    color: #666;
+    font-weight: normal;
+}

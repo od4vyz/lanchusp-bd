@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>LanchUSP</title>
+</head>
+<body>
+    <img src="{{ url_for('static', filename='img/logoTransparente.png') }}" alt="LanchUSP Logo" class="logo">
+
+    <h1>Selecione sua filial:</h1>
+
+    <main class="grid-filiais">
+        {% for lanchonete in lanchonetes %}
+        <div class="card-filial">
+            <a href="">
+                <h3>{{ lanchonete.nome }}</h3>
+                <p>{{ lanchonete.localizacao }}</p>
+            </a>
+        </div>
+    {% else %}
+        <h2 class="sem-resultado">Nenhuma filial encontrada...</h2>
+    {% endfor %}
+    </main>
+</body>
+</html>

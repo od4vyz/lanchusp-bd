@@ -9,7 +9,7 @@ class DatabaseManager:
         self.conn = psycopg2.connect(
             dbname="lanchusp", # Colocar aqui o nome da Database criada no pgAdmin
             user="postgres",   # Colocar aqui o usuário do seu pgAdmin
-            password="senha",  # Colocar aqui a senha do seu pgAdmin
+            password="123456",  # Colocar aqui a senha do seu pgAdmin
             host="127.0.0.1",
             port=5432,
         )
