@@ -1,385 +1,353 @@
-INSERT INTO Lanchonete (Localizacao, Nome) VALUES 
+
+-- 1. INSERINDO LANCHONETES (Campus)
+
+INSERT INTO Lanchonete (Campus, Nome) VALUES 
 ('Av. Paulista, 1578 - Bela Vista', 'Lanchusp Paulista'),
 ('Rua Funchal, 500 - Vila Olímpia', 'Lanchusp Funchal'),
 ('Rua Tuiuti, 1620 - Tatuapé', 'Lanchusp Tatuapé'),
 ('Rua dos Pinheiros, 300 - Pinheiros', 'Lanchusp Pinheiros'),
 ('Av. Ibirapuera, 3103 - Moema', 'Lanchusp Moema');
 
+
+-- 2. INSERINDO CLIENTES
+
 INSERT INTO Cliente (CPF, Nome) VALUES 
-('11122233301', 'João Silva'), 
-('11122233302', 'Maria Oliveira'), 
-('11122233303', 'Pedro Santos'),
-('11122233304', 'Ana Costa'), 
-('11122233305', 'Lucas Pereira'), 
-('11122233306', 'Fernanda Lima'),
-('11122233307', 'Bruno Souza'), 
-('11122233308', 'Carla Mendes'), 
-('11122233309', 'Rodrigo Alves'),
-('11122233310', 'Juliana Rocha'), 
-('11122233311', 'Marcos Dias'), 
-('11122233312', 'Patricia Ramos'),
-('11122233313', 'Gabriel Martins'), 
-('11122233314', 'Larissa Torres'), 
-('11122233315', 'Rafael Gomes'),
-('11122233316', 'Camila Ribeiro'), 
-('11122233317', 'Felipe Araujo'), 
-('11122233318', 'Amanda Castro'),
-('11122233319', 'Thiago Barbosa'), 
-('11122233320', 'Beatriz Nogueira'), 
-('11122233321', 'Vinicius Cardoso'),
-('11122233322', 'Mariana Teixeira'), 
-('11122233323', 'Leonardo Correia'), 
-('11122233324', 'Sofia Melo'),
+('11122233301', 'João Silva'), ('11122233302', 'Maria Oliveira'), ('11122233303', 'Pedro Santos'),
+('11122233304', 'Ana Costa'), ('11122233305', 'Lucas Pereira'), ('11122233306', 'Fernanda Lima'),
+('11122233307', 'Bruno Souza'), ('11122233308', 'Carla Mendes'), ('11122233309', 'Rodrigo Alves'),
+('11122233310', 'Juliana Rocha'), ('11122233311', 'Marcos Dias'), ('11122233312', 'Patricia Ramos'),
+('11122233313', 'Gabriel Martins'), ('11122233314', 'Larissa Torres'), ('11122233315', 'Rafael Gomes'),
+('11122233316', 'Camila Ribeiro'), ('11122233317', 'Felipe Araujo'), ('11122233318', 'Amanda Castro'),
+('11122233319', 'Thiago Barbosa'), ('11122233320', 'Beatriz Nogueira'), ('11122233321', 'Vinicius Cardoso'),
+('11122233322', 'Mariana Teixeira'), ('11122233323', 'Leonardo Correia'), ('11122233324', 'Sofia Melo'),
 ('11122233325', 'Eduardo Cavalcanti');
 
+
+-- 3. INSERINDO FUNCIONARIOS (Apenas dados pessoais)
+
 INSERT INTO Funcionario (CPF, Nome) VALUES 
-('99988877701', 'Carlos José'),
-('99988877702', 'Sandra Lima'),
-('99988877703', 'Roberto Santana'),
-('99988877704', 'Julia Andrade'),
-('99988877705', 'Paulo Pereira'),
+('99988877701', 'Carlos José'), ('99988877702', 'Sandra Lima'), ('99988877703', 'Roberto Santana'),
+('99988877704', 'Julia Andrade'), ('99988877705', 'Paulo Pereira'), ('99988877706', 'Marcela Cardoso'),
+('99988877707', 'Jorge Matheus'), ('99988877708', 'Ricardo Luiz'), ('99988877709', 'Aline Costa'),
+('99988877710', 'Fernando Barbosa'), ('99988877711', 'Renata Augusta'), ('99988877712', 'Diego Gabriel'),
+('99988877713', 'Vitor Souza'), ('99988877714', 'Luana Regina'), ('99988877715', 'Gustavo Auxiliar'),
+('99988877716', 'Bianca Leal'), ('99988877717', 'Fábio Lucindo'), ('99988877718', 'Helena Costa'),
+('99988877719', 'Igor Araújo'), ('99988877720', 'Leticia Bianco'), ('99988877721', 'Otávio Luiz'),
+('99988877722', 'Priscila Santos'), ('99988877723', 'Samuel Franco'), ('99988877724', 'Tatiane Cruz'),
+('99988877725', 'Willian Augusto');
 
-('99988877706', 'Marcela Cardoso'),
-('99988877707', 'Jorge Matheus'),
-('99988877708', 'Ricardo Luiz'),
-('99988877709', 'Aline Costa'),
-('99988877710', 'Fernando Barbosa'),
 
-('99988877711', 'Renata Augusta'),
-('99988877712', 'Diego Gabriel'),
-('99988877713', 'Vitor Souza'),
-('99988877714', 'Luana Regina'),
-('99988877715', 'Gustavo Auxiliar'),
+-- 4. INSERINDO QUADRO DE FUNCIONARIOS (Dados contratuais)
 
-('99988877716', 'Bianca Leal'),
-('99988877717', 'Fábio Lucindo'),
-('99988877718', 'Helena Costa'),
-('99988877719', 'Igor Araújo'),
-('99988877720', 'Leticia Bianco'),
-
-('99988877721', 'Otávio Luiz'),
-('99988877722', 'Priscila Santos'),
-('99988877723', 'Samuel Franco'),
-('99988877724', 'Tatiane Cruz'),
-('99988877725', 'Willian Auxiliar');
-
-INSERT INTO Trabalha_Em (CPF_Funcionario, Localizacao_Lanchonete, Data_admissao, Cargo, Salario, Carga_Horaria, Horario_entrada) VALUES
+INSERT INTO Quadro_Funcionarios (CPF, Campus, dataAdmissao, Cargo, Salario, cargaHoraria, horarioEntrada) VALUES
 ('99988877701', 'Av. Paulista, 1578 - Bela Vista', '2020-01-15', 'Gerente', 5500.00, 44, '08:00:00'), 
 ('99988877702', 'Av. Paulista, 1578 - Bela Vista', '2021-03-10', 'Caixa', 1800.00, 36, '09:00:00'), 
 ('99988877703', 'Av. Paulista, 1578 - Bela Vista', '2021-05-20', 'Cozinheiro', 2500.00, 44, '10:00:00'),
 ('99988877704', 'Av. Paulista, 1578 - Bela Vista', '2022-02-01', 'Atendente', 1600.00, 36, '11:00:00'), 
 ('99988877705', 'Av. Paulista, 1578 - Bela Vista', '2022-06-15', 'Auxiliar', 1400.00, 40, '08:00:00'),
-
 ('99988877706', 'Rua Funchal, 500 - Vila Olímpia', '2020-02-20', 'Gerente', 5500.00, 44, '08:00:00'),
 ('99988877707', 'Rua Funchal, 500 - Vila Olímpia', '2021-04-12', 'Caixa', 1800.00, 36, '14:00:00'),
 ('99988877708', 'Rua Funchal, 500 - Vila Olímpia', '2021-07-25', 'Cozinheiro', 2500.00, 44, '16:00:00'),
 ('99988877709', 'Rua Funchal, 500 - Vila Olímpia', '2022-03-05', 'Atendente', 1600.00, 36, '17:00:00'),
 ('99988877710', 'Rua Funchal, 500 - Vila Olímpia', '2022-08-10', 'Auxiliar', 1400.00, 40, '14:00:00'),
-
 ('99988877711', 'Rua Tuiuti, 1620 - Tatuapé', '2019-11-11', 'Gerente', 5800.00, 44, '08:00:00'), 
 ('99988877712', 'Rua Tuiuti, 1620 - Tatuapé', '2021-01-05', 'Caixa', 1800.00, 36, '08:00:00'),
 ('99988877713', 'Rua Tuiuti, 1620 - Tatuapé', '2020-12-01', 'Cozinheiro', 2600.00, 44, '10:00:00'), 
 ('99988877714', 'Rua Tuiuti, 1620 - Tatuapé', '2022-09-20', 'Atendente', 1600.00, 36, '12:00:00'),
 ('99988877715', 'Rua Tuiuti, 1620 - Tatuapé', '2023-01-15', 'Auxiliar', 1400.00, 40, '09:00:00'),
-
 ('99988877716', 'Rua dos Pinheiros, 300 - Pinheiros', '2020-05-05', 'Gerente', 5500.00, 44, '14:00:00'), 
 ('99988877717', 'Rua dos Pinheiros, 300 - Pinheiros', '2021-09-10', 'Caixa', 1800.00, 36, '15:00:00'),
 ('99988877718', 'Rua dos Pinheiros, 300 - Pinheiros', '2021-10-20', 'Cozinheiro', 2500.00, 44, '16:00:00'), 
 ('99988877719', 'Rua dos Pinheiros, 300 - Pinheiros', '2022-11-01', 'Atendente', 1600.00, 36, '18:00:00'),
 ('99988877720', 'Rua dos Pinheiros, 300 - Pinheiros', '2023-02-10', 'Auxiliar', 1400.00, 40, '15:00:00'),
-
 ('99988877721', 'Av. Ibirapuera, 3103 - Moema', '2020-08-15', 'Gerente', 5500.00, 44, '08:00:00'), 
 ('99988877722', 'Av. Ibirapuera, 3103 - Moema', '2021-12-05', 'Caixa', 1800.00, 36, '10:00:00'),
 ('99988877723', 'Av. Ibirapuera, 3103 - Moema', '2022-01-20', 'Cozinheiro', 2500.00, 44, '12:00:00'), 
 ('99988877724', 'Av. Ibirapuera, 3103 - Moema', '2022-05-15', 'Atendente', 1600.00, 36, '14:00:00'),
 ('99988877725', 'Av. Ibirapuera, 3103 - Moema', '2023-03-20', 'Auxiliar', 1400.00, 40, '10:00:00');
 
--- Ingredientes (15)
-INSERT INTO Item (Nome) VALUES 
-('Pão de Hamburguer'), 
-('Carne Bovina'), 
-('Queijo Prato'), 
-('Bacon Fatiado'), 
-('Alface Americana'), 
-('Tomate'), 
-('Maionese da Casa'), 
-('Batata Palito'), 
-('Óleo de Soja'), 
-('Leite Integral'), 
-('Sorvete de Creme'), 
-('Chocolate em Pó'), 
-('Café em Grão'), 
-('Açúcar'), 
-('Ovo');
 
--- Produtos Prontos (10)
-INSERT INTO Item (Nome) VALUES 
-('X-Salada'), 
-('X-Bacon'), 
-('X-Burger'), 
-('Batata Frita Grande'), 
-('Milkshake Chocolate'),
-('Café Expresso'), 
-('Coxinha de Frango'), 
-('Brigadeiro'), 
-('Refrigerante Lata'), 
-('Água Mineral');
+-- 5. INSERINDO ITENS (Ingredientes e Produtos)
 
-INSERT INTO Vende (Localizacao_Lanchonete, Nome_Item, Preco) VALUES
-('Av. Paulista, 1578 - Bela Vista', 'X-Salada', 28.90),
-('Av. Paulista, 1578 - Bela Vista', 'X-Bacon', 32.90),
-('Av. Paulista, 1578 - Bela Vista', 'Batata Frita Grande', 18.00),
-('Av. Paulista, 1578 - Bela Vista', 'Refrigerante Lata', 8.00),
-('Av. Paulista, 1578 - Bela Vista', 'Café Expresso', 7.50);
+INSERT INTO Item (Nome, Categoria) VALUES 
+-- Ingredientes
+('Pão de Hamburguer', 'Ingrediente'), ('Carne Bovina', 'Ingrediente'), ('Queijo Prato', 'Ingrediente'), 
+('Bacon Fatiado', 'Ingrediente'), ('Alface Americana', 'Ingrediente'), ('Tomate', 'Ingrediente'), 
+('Maionese da Casa', 'Ingrediente'), ('Batata Palito', 'Ingrediente'), ('Óleo de Soja', 'Ingrediente'), 
+('Leite Integral', 'Ingrediente'), ('Sorvete de Creme', 'Ingrediente'), ('Chocolate em Pó', 'Ingrediente'), 
+('Café em Grão', 'Ingrediente'), ('Açúcar', 'Ingrediente'), ('Ovo', 'Ingrediente'),
+-- Produtos Artesanais (Lanches/Bebidas feitos na hora)
+('X-Salada', 'Lanche'), ('X-Bacon', 'Lanche'), ('X-Burger', 'Lanche'), 
+('Batata Frita Grande', 'Porção'), ('Milkshake Chocolate', 'Bebida'), ('Café Expresso', 'Bebida'),
+-- Produtos Industrializados/Prontos
+('Coxinha de Frango', 'Salgado'), ('Brigadeiro', 'Doce'), 
+('Refrigerante Lata', 'Bebida'), ('Água Mineral', 'Bebida');
 
-INSERT INTO Vende (Localizacao_Lanchonete, Nome_Item, Preco) VALUES
-('Rua Funchal, 500 - Vila Olímpia', 'X-Burger', 25.00),
-('Rua Funchal, 500 - Vila Olímpia', 'X-Bacon', 30.00),
-('Rua Funchal, 500 - Vila Olímpia', 'Milkshake Chocolate', 22.00),
-('Rua Funchal, 500 - Vila Olímpia', 'Coxinha de Frango', 9.50),
-('Rua Funchal, 500 - Vila Olímpia', 'Água Mineral', 6.00);
 
-INSERT INTO Vende (Localizacao_Lanchonete, Nome_Item, Preco) VALUES
-('Rua Tuiuti, 1620 - Tatuapé', 'X-Salada', 22.00),
-('Rua Tuiuti, 1620 - Tatuapé', 'X-Burger', 20.00),
-('Rua Tuiuti, 1620 - Tatuapé', 'Batata Frita Grande', 14.00),
-('Rua Tuiuti, 1620 - Tatuapé', 'Refrigerante Lata', 6.00),
-('Rua Tuiuti, 1620 - Tatuapé', 'Brigadeiro', 4.00);
+-- 6. INSERINDO ARTESANAL (Antiga tabela Receita)
 
-INSERT INTO Vende (Localizacao_Lanchonete, Nome_Item, Preco) VALUES
-('Rua dos Pinheiros, 300 - Pinheiros', 'X-Bacon', 35.00),
-('Rua dos Pinheiros, 300 - Pinheiros', 'Milkshake Chocolate', 26.00),
-('Rua dos Pinheiros, 300 - Pinheiros', 'Café Expresso', 8.00),
-('Rua dos Pinheiros, 300 - Pinheiros', 'Água Mineral', 7.00),
-('Rua dos Pinheiros, 300 - Pinheiros', 'Brigadeiro', 6.50);
+INSERT INTO Artesanal (Nome, tempoPreparo) VALUES
+('X-Salada', '15 minutes'),
+('X-Bacon', '18 minutes'),
+('X-Burger', '12 minutes'),
+('Batata Frita Grande', '10 minutes'),
+('Milkshake Chocolate', '8 minutes'),
+('Café Expresso', '3 minutes');
 
-INSERT INTO Vende (Localizacao_Lanchonete, Nome_Item, Preco) VALUES
-('Av. Ibirapuera, 3103 - Moema', 'X-Salada', 26.00),
-('Av. Ibirapuera, 3103 - Moema', 'Batata Frita Grande', 16.00),
-('Av. Ibirapuera, 3103 - Moema', 'Coxinha de Frango', 8.00),
-('Av. Ibirapuera, 3103 - Moema', 'Refrigerante Lata', 7.00),
-('Av. Ibirapuera, 3103 - Moema', 'Milkshake Chocolate', 24.00);
 
-INSERT INTO Receita (Nome_Item, Categoria, Tempo_Medio_Preparo) VALUES
-('X-Salada', 'Lanche', 15),
-('X-Bacon', 'Lanche', 18),
-('X-Burger', 'Lanche', 12),
-('Batata Frita Grande', 'Porção', 10),
-('Milkshake Chocolate', 'Bebida', 8),
-('Café Expresso', 'Bebida', 3);
+-- INSERINDO UTILIZA 
 
-INSERT INTO Produto_Pronto (Nome_Item, Categoria) VALUES
-('Coxinha de Frango', 'Salgado'),
-('Brigadeiro', 'Doce'),
-('Refrigerante Lata', 'Bebida'),
-('Água Mineral', 'Bebida');
-
-INSERT INTO Utiliza (Nome_Produto, Nome_Ingrediente, Quantidade) VALUES
--- X-Salada
-('X-Salada', 'Pão de Hamburguer', 1), 
-('X-Salada', 'Carne Bovina', 1), 
-('X-Salada', 'Queijo Prato', 2), 
-('X-Salada', 'Alface Americana', 1), 
-('X-Salada', 'Tomate', 2), 
-('X-Salada', 'Maionese da Casa', 1),
--- X-Bacon
-('X-Bacon', 'Pão de Hamburguer', 1), 
-('X-Bacon', 'Carne Bovina', 1),
-('X-Bacon', 'Queijo Prato', 2), 
-('X-Bacon', 'Bacon Fatiado', 3),
--- X-Burger
-('X-Burger', 'Pão de Hamburguer', 1), 
-('X-Burger', 'Carne Bovina', 1),
+INSERT INTO Utiliza (NomeArtesanal, NomeIngrediente, Quantidade) VALUES
+('X-Salada', 'Pão de Hamburguer', 1), ('X-Salada', 'Carne Bovina', 1), 
+('X-Salada', 'Queijo Prato', 2), ('X-Salada', 'Alface Americana', 1), 
+('X-Salada', 'Tomate', 2), ('X-Salada', 'Maionese da Casa', 1),
+('X-Bacon', 'Pão de Hamburguer', 1), ('X-Bacon', 'Carne Bovina', 1),
+('X-Bacon', 'Queijo Prato', 2), ('X-Bacon', 'Bacon Fatiado', 3),
+('X-Burger', 'Pão de Hamburguer', 1), ('X-Burger', 'Carne Bovina', 1),
 ('X-Burger', 'Queijo Prato', 2),
--- Batata Frita
 ('Batata Frita Grande', 'Batata Palito', 1), ('Batata Frita Grande', 'Óleo de Soja', 1),
--- Milkshake
-('Milkshake Chocolate', 'Sorvete de Creme', 3), 
-('Milkshake Chocolate', 'Leite Integral', 1),
+('Milkshake Chocolate', 'Sorvete de Creme', 3), ('Milkshake Chocolate', 'Leite Integral', 1),
 ('Milkshake Chocolate', 'Chocolate em Pó', 2),
--- Café
 ('Café Expresso', 'Café em Grão', 1), ('Café Expresso', 'Açúcar', 1);
 
-INSERT INTO Compra (Nome_Item, Data_Hora, Quantidade, Valor_Unit) VALUES
-('Pão de Hamburguer', '2023-10-01 08:00:00', 100, 0.80),
-('Carne Bovina', '2023-10-01 08:30:00', 100, 5.50),
-('Queijo Prato', '2023-10-02 09:00:00', 50, 25.00),
-('Bacon Fatiado', '2023-10-02 09:15:00', 30, 35.00),
-('Alface Americana', '2023-10-03 07:00:00', 20, 3.00),
-('Tomate', '2023-10-03 07:10:00', 15, 6.00),
-('Maionese da Casa', '2023-10-04 10:00:00', 10, 12.00),
-('Batata Palito', '2023-10-04 11:00:00', 50, 18.00),
-('Óleo de Soja', '2023-10-05 08:00:00', 20, 7.00),
-('Leite Integral', '2023-10-05 08:30:00', 40, 4.50),
-('Sorvete de Creme', '2023-10-06 14:00:00', 10, 28.00),
-('Chocolate em Pó', '2023-10-06 14:30:00', 5, 15.00),
-('Café em Grão', '2023-10-07 09:00:00', 5, 45.00),
-('Açúcar', '2023-10-07 09:15:00', 10, 4.00),
-('Refrigerante Lata', '2023-10-08 10:00:00', 200, 3.00),
-('Água Mineral', '2023-10-08 10:30:00', 100, 2.00),
-('Coxinha de Frango', '2023-10-09 07:00:00', 50, 3.50),
-('Brigadeiro', '2023-10-09 07:15:00', 50, 2.00),
-('Pão de Hamburguer', '2023-10-10 08:00:00', 100, 0.80),
-('Carne Bovina', '2023-10-10 08:30:00', 100, 5.50),
-('Queijo Prato', '2023-10-11 09:00:00', 50, 25.00),
-('Alface Americana', '2023-10-11 07:00:00', 20, 3.00),
-('Tomate', '2023-10-11 07:10:00', 15, 6.00),
-('Batata Palito', '2023-10-12 11:00:00', 50, 18.00),
-('Óleo de Soja', '2023-10-12 08:00:00', 20, 7.00);
+
+-- INSERINDO CATALOGO
+
+INSERT INTO Catalogo (Campus, NomeItem, Preco, qtdDisponivel) VALUES
+-- Paulista
+('Av. Paulista, 1578 - Bela Vista', 'X-Salada', 28.90, 100),
+('Av. Paulista, 1578 - Bela Vista', 'X-Bacon', 32.90, 80),
+('Av. Paulista, 1578 - Bela Vista', 'Batata Frita Grande', 18.00, 150),
+('Av. Paulista, 1578 - Bela Vista', 'Refrigerante Lata', 8.00, 200),
+('Av. Paulista, 1578 - Bela Vista', 'Café Expresso', 7.50, 100),
+-- Funchal
+('Rua Funchal, 500 - Vila Olímpia', 'X-Burger', 25.00, 100),
+('Rua Funchal, 500 - Vila Olímpia', 'X-Bacon', 30.00, 90),
+('Rua Funchal, 500 - Vila Olímpia', 'Milkshake Chocolate', 22.00, 50),
+('Rua Funchal, 500 - Vila Olímpia', 'Coxinha de Frango', 9.50, 120),
+('Rua Funchal, 500 - Vila Olímpia', 'Água Mineral', 6.00, 150),
+-- Tatuapé
+('Rua Tuiuti, 1620 - Tatuapé', 'X-Salada', 22.00, 100),
+('Rua Tuiuti, 1620 - Tatuapé', 'X-Burger', 20.00, 100),
+('Rua Tuiuti, 1620 - Tatuapé', 'Batata Frita Grande', 14.00, 100),
+('Rua Tuiuti, 1620 - Tatuapé', 'Refrigerante Lata', 6.00, 150),
+('Rua Tuiuti, 1620 - Tatuapé', 'Brigadeiro', 4.00, 200),
+-- Pinheiros
+('Rua dos Pinheiros, 300 - Pinheiros', 'X-Bacon', 35.00, 70),
+('Rua dos Pinheiros, 300 - Pinheiros', 'Milkshake Chocolate', 26.00, 40),
+('Rua dos Pinheiros, 300 - Pinheiros', 'Café Expresso', 8.00, 100),
+('Rua dos Pinheiros, 300 - Pinheiros', 'Água Mineral', 7.00, 100),
+('Rua dos Pinheiros, 300 - Pinheiros', 'Brigadeiro', 6.50, 150),
+-- Moema
+('Av. Ibirapuera, 3103 - Moema', 'X-Salada', 26.00, 90),
+('Av. Ibirapuera, 3103 - Moema', 'Batata Frita Grande', 16.00, 100),
+('Av. Ibirapuera, 3103 - Moema', 'Coxinha de Frango', 8.00, 100),
+('Av. Ibirapuera, 3103 - Moema', 'Refrigerante Lata', 7.00, 150),
+('Av. Ibirapuera, 3103 - Moema', 'Milkshake Chocolate', 24.00, 60);
+
+
+-- INSERINDO COMPRAS E ITENS DE COMPRA
+
+-- Compra 1 (Paulista)
+INSERT INTO Compra (Campus, Fornecedor, dataHora, Valor) VALUES
+('Av. Paulista, 1578 - Bela Vista', 'Fornecedor A', '2023-10-01 08:00:00', 2000.00);
+
+INSERT INTO Compra_Item (Campus, Fornecedor, dataHora, NomeItem, Quantidade, ValorUnit) VALUES
+('Av. Paulista, 1578 - Bela Vista', 'Fornecedor A', '2023-10-01 08:00:00', 'Pão de Hamburguer', 100, 0.80),
+('Av. Paulista, 1578 - Bela Vista', 'Fornecedor A', '2023-10-01 08:00:00', 'Carne Bovina', 100, 5.50),
+('Av. Paulista, 1578 - Bela Vista', 'Fornecedor A', '2023-10-01 08:00:00', 'Queijo Prato', 50, 25.00);
+
+-- Compra 2 (Funchal)
+INSERT INTO Compra (Campus, Fornecedor, dataHora, Valor) VALUES
+('Rua Funchal, 500 - Vila Olímpia', 'Fornecedor B', '2023-10-02 09:00:00', 1500.00);
+
+INSERT INTO Compra_Item (Campus, Fornecedor, dataHora, NomeItem, Quantidade, ValorUnit) VALUES
+('Rua Funchal, 500 - Vila Olímpia', 'Fornecedor B', '2023-10-02 09:00:00', 'Bacon Fatiado', 30, 35.00),
+('Rua Funchal, 500 - Vila Olímpia', 'Fornecedor B', '2023-10-02 09:00:00', 'Alface Americana', 20, 3.00),
+('Rua Funchal, 500 - Vila Olímpia', 'Fornecedor B', '2023-10-02 09:00:00', 'Tomate', 15, 6.00);
+
+-- Compra 3 (Tatuapé)
+INSERT INTO Compra (Campus, Fornecedor, dataHora, Valor) VALUES
+('Rua Tuiuti, 1620 - Tatuapé', 'Fornecedor C', '2023-10-04 10:00:00', 1200.00);
+
+INSERT INTO Compra_Item (Campus, Fornecedor, dataHora, NomeItem, Quantidade, ValorUnit) VALUES
+('Rua Tuiuti, 1620 - Tatuapé', 'Fornecedor C', '2023-10-04 10:00:00', 'Maionese da Casa', 10, 12.00),
+('Rua Tuiuti, 1620 - Tatuapé', 'Fornecedor C', '2023-10-04 10:00:00', 'Batata Palito', 50, 18.00),
+('Rua Tuiuti, 1620 - Tatuapé', 'Fornecedor C', '2023-10-04 10:00:00', 'Óleo de Soja', 20, 7.00);
+
+-- Compra 4 (Pinheiros)
+INSERT INTO Compra (Campus, Fornecedor, dataHora, Valor) VALUES
+('Rua dos Pinheiros, 300 - Pinheiros', 'Fornecedor A', '2023-10-05 08:30:00', 800.00);
+
+INSERT INTO Compra_Item (Campus, Fornecedor, dataHora, NomeItem, Quantidade, ValorUnit) VALUES
+('Rua dos Pinheiros, 300 - Pinheiros', 'Fornecedor A', '2023-10-05 08:30:00', 'Leite Integral', 40, 4.50),
+('Rua dos Pinheiros, 300 - Pinheiros', 'Fornecedor A', '2023-10-05 08:30:00', 'Sorvete de Creme', 10, 28.00),
+('Rua dos Pinheiros, 300 - Pinheiros', 'Fornecedor A', '2023-10-05 08:30:00', 'Chocolate em Pó', 5, 15.00);
+
+-- Compra 5 (Moema)
+INSERT INTO Compra (Campus, Fornecedor, dataHora, Valor) VALUES
+('Av. Ibirapuera, 3103 - Moema', 'Fornecedor D', '2023-10-08 10:00:00', 1000.00);
+
+INSERT INTO Compra_Item (Campus, Fornecedor, dataHora, NomeItem, Quantidade, ValorUnit) VALUES
+('Av. Ibirapuera, 3103 - Moema', 'Fornecedor D', '2023-10-08 10:00:00', 'Refrigerante Lata', 200, 3.00),
+('Av. Ibirapuera, 3103 - Moema', 'Fornecedor D', '2023-10-08 10:00:00', 'Água Mineral', 100, 2.00);
+
+
+-- INSERINDO PEDIDOS E ITENS DO PEDIDO
 
 -- Pedido 1 (Paulista)
-INSERT INTO Pedido (CPF_Cliente, Localizacao_Lanchonete, Data, Hora, MeioPagamento, Valor) VALUES
-('11122233301', 'Av. Paulista, 1578 - Bela Vista', '2023-10-20', '12:30:00', 'Cartão Crédito', 36.90);
-INSERT INTO Contem (CPF_Cliente, Localizacao_Lanchonete, Data_Pedido, Hora_Pedido, Nome_Item, Quantidade) VALUES
-('11122233301', 'Av. Paulista, 1578 - Bela Vista', '2023-10-20', '12:30:00', 'X-Salada', 1),
-('11122233301', 'Av. Paulista, 1578 - Bela Vista', '2023-10-20', '12:30:00', 'Refrigerante Lata', 1);
+INSERT INTO Pedido (Campus, CPF, dataHora, Valor, meioPagamento) VALUES
+('Av. Paulista, 1578 - Bela Vista', '11122233301', '2023-10-20 12:30:00', 36.90, 'Cartão Crédito');
+INSERT INTO Pedido_Item (Campus, CPF, dataHora, NomeItem, Quantidade) VALUES
+('Av. Paulista, 1578 - Bela Vista', '11122233301', '2023-10-20 12:30:00', 'X-Salada', 1),
+('Av. Paulista, 1578 - Bela Vista', '11122233301', '2023-10-20 12:30:00', 'Refrigerante Lata', 1);
 
 -- Pedido 2 (Paulista)
-INSERT INTO Pedido (CPF_Cliente, Localizacao_Lanchonete, Data, Hora, MeioPagamento, Valor) VALUES
-('11122233302', 'Av. Paulista, 1578 - Bela Vista', '2023-10-20', '12:45:00', 'PIX', 32.90);
-INSERT INTO Contem (CPF_Cliente, Localizacao_Lanchonete, Data_Pedido, Hora_Pedido, Nome_Item, Quantidade) VALUES
-('11122233302', 'Av. Paulista, 1578 - Bela Vista', '2023-10-20', '12:45:00', 'X-Bacon', 1);
+INSERT INTO Pedido (Campus, CPF, dataHora, Valor, meioPagamento) VALUES
+('Av. Paulista, 1578 - Bela Vista', '11122233302', '2023-10-20 12:45:00', 32.90, 'PIX');
+INSERT INTO Pedido_Item (Campus, CPF, dataHora, NomeItem, Quantidade) VALUES
+('Av. Paulista, 1578 - Bela Vista', '11122233302', '2023-10-20 12:45:00', 'X-Bacon', 1);
 
 -- Pedido 3 (Paulista)
-INSERT INTO Pedido (CPF_Cliente, Localizacao_Lanchonete, Data, Hora, MeioPagamento, Valor) VALUES
-('11122233303', 'Av. Paulista, 1578 - Bela Vista', '2023-10-20', '13:00:00', 'Dinheiro', 7.50);
-INSERT INTO Contem (CPF_Cliente, Localizacao_Lanchonete, Data_Pedido, Hora_Pedido, Nome_Item, Quantidade) VALUES
-('11122233303', 'Av. Paulista, 1578 - Bela Vista', '2023-10-20', '13:00:00', 'Café Expresso', 1);
+INSERT INTO Pedido (Campus, CPF, dataHora, Valor, meioPagamento) VALUES
+('Av. Paulista, 1578 - Bela Vista', '11122233303', '2023-10-20 13:00:00', 7.50, 'Dinheiro');
+INSERT INTO Pedido_Item (Campus, CPF, dataHora, NomeItem, Quantidade) VALUES
+('Av. Paulista, 1578 - Bela Vista', '11122233303', '2023-10-20 13:00:00', 'Café Expresso', 1);
 
 -- Pedido 4 (Paulista)
-INSERT INTO Pedido (CPF_Cliente, Localizacao_Lanchonete, Data, Hora, MeioPagamento, Valor) VALUES
-('11122233304', 'Av. Paulista, 1578 - Bela Vista', '2023-10-20', '19:00:00', 'Cartão Débito', 18.00);
-INSERT INTO Contem (CPF_Cliente, Localizacao_Lanchonete, Data_Pedido, Hora_Pedido, Nome_Item, Quantidade) VALUES
-('11122233304', 'Av. Paulista, 1578 - Bela Vista', '2023-10-20', '19:00:00', 'Batata Frita Grande', 1);
+INSERT INTO Pedido (Campus, CPF, dataHora, Valor, meioPagamento) VALUES
+('Av. Paulista, 1578 - Bela Vista', '11122233304', '2023-10-20 19:00:00', 18.00, 'Cartão Débito');
+INSERT INTO Pedido_Item (Campus, CPF, dataHora, NomeItem, Quantidade) VALUES
+('Av. Paulista, 1578 - Bela Vista', '11122233304', '2023-10-20 19:00:00', 'Batata Frita Grande', 1);
 
 -- Pedido 5 (Paulista)
-INSERT INTO Pedido (CPF_Cliente, Localizacao_Lanchonete, Data, Hora, MeioPagamento, Valor) VALUES
-('11122233305', 'Av. Paulista, 1578 - Bela Vista', '2023-10-20', '20:00:00', 'Cartão Crédito', 40.90);
-INSERT INTO Contem (CPF_Cliente, Localizacao_Lanchonete, Data_Pedido, Hora_Pedido, Nome_Item, Quantidade) VALUES
-('11122233305', 'Av. Paulista, 1578 - Bela Vista', '2023-10-20', '20:00:00', 'X-Bacon', 1),
-('11122233305', 'Av. Paulista, 1578 - Bela Vista', '2023-10-20', '20:00:00', 'Refrigerante Lata', 1);
+INSERT INTO Pedido (Campus, CPF, dataHora, Valor, meioPagamento) VALUES
+('Av. Paulista, 1578 - Bela Vista', '11122233305', '2023-10-20 20:00:00', 40.90, 'Cartão Crédito');
+INSERT INTO Pedido_Item (Campus, CPF, dataHora, NomeItem, Quantidade) VALUES
+('Av. Paulista, 1578 - Bela Vista', '11122233305', '2023-10-20 20:00:00', 'X-Bacon', 1),
+('Av. Paulista, 1578 - Bela Vista', '11122233305', '2023-10-20 20:00:00', 'Refrigerante Lata', 1);
 
 -- Pedido 6 (Funchal)
-INSERT INTO Pedido (CPF_Cliente, Localizacao_Lanchonete, Data, Hora, MeioPagamento, Valor) VALUES
-('11122233306', 'Rua Funchal, 500 - Vila Olímpia', '2023-10-21', '12:00:00', 'Vale Refeição', 25.00);
-INSERT INTO Contem (CPF_Cliente, Localizacao_Lanchonete, Data_Pedido, Hora_Pedido, Nome_Item, Quantidade) VALUES
-('11122233306', 'Rua Funchal, 500 - Vila Olímpia', '2023-10-21', '12:00:00', 'X-Burger', 1);
+INSERT INTO Pedido (Campus, CPF, dataHora, Valor, meioPagamento) VALUES
+('Rua Funchal, 500 - Vila Olímpia', '11122233306', '2023-10-21 12:00:00', 25.00, 'Vale Refeição');
+INSERT INTO Pedido_Item (Campus, CPF, dataHora, NomeItem, Quantidade) VALUES
+('Rua Funchal, 500 - Vila Olímpia', '11122233306', '2023-10-21 12:00:00', 'X-Burger', 1);
 
 -- Pedido 7 (Funchal)
-INSERT INTO Pedido (CPF_Cliente, Localizacao_Lanchonete, Data, Hora, MeioPagamento, Valor) VALUES
-('11122233307', 'Rua Funchal, 500 - Vila Olímpia', '2023-10-21', '12:15:00', 'Cartão Crédito', 30.00);
-INSERT INTO Contem (CPF_Cliente, Localizacao_Lanchonete, Data_Pedido, Hora_Pedido, Nome_Item, Quantidade) VALUES
-('11122233307', 'Rua Funchal, 500 - Vila Olímpia', '2023-10-21', '12:15:00', 'X-Bacon', 1);
+INSERT INTO Pedido (Campus, CPF, dataHora, Valor, meioPagamento) VALUES
+('Rua Funchal, 500 - Vila Olímpia', '11122233307', '2023-10-21 12:15:00', 30.00, 'Cartão Crédito');
+INSERT INTO Pedido_Item (Campus, CPF, dataHora, NomeItem, Quantidade) VALUES
+('Rua Funchal, 500 - Vila Olímpia', '11122233307', '2023-10-21 12:15:00', 'X-Bacon', 1);
 
 -- Pedido 8 (Funchal)
-INSERT INTO Pedido (CPF_Cliente, Localizacao_Lanchonete, Data, Hora, MeioPagamento, Valor) VALUES
-('11122233308', 'Rua Funchal, 500 - Vila Olímpia', '2023-10-21', '15:30:00', 'Dinheiro', 9.50);
-INSERT INTO Contem (CPF_Cliente, Localizacao_Lanchonete, Data_Pedido, Hora_Pedido, Nome_Item, Quantidade) VALUES
-('11122233308', 'Rua Funchal, 500 - Vila Olímpia', '2023-10-21', '15:30:00', 'Coxinha de Frango', 1);
+INSERT INTO Pedido (Campus, CPF, dataHora, Valor, meioPagamento) VALUES
+('Rua Funchal, 500 - Vila Olímpia', '11122233308', '2023-10-21 15:30:00', 9.50, 'Dinheiro');
+INSERT INTO Pedido_Item (Campus, CPF, dataHora, NomeItem, Quantidade) VALUES
+('Rua Funchal, 500 - Vila Olímpia', '11122233308', '2023-10-21 15:30:00', 'Coxinha de Frango', 1);
 
 -- Pedido 9 (Funchal)
-INSERT INTO Pedido (CPF_Cliente, Localizacao_Lanchonete, Data, Hora, MeioPagamento, Valor) VALUES
-('11122233309', 'Rua Funchal, 500 - Vila Olímpia', '2023-10-21', '16:00:00', 'PIX', 22.00);
-INSERT INTO Contem (CPF_Cliente, Localizacao_Lanchonete, Data_Pedido, Hora_Pedido, Nome_Item, Quantidade) VALUES
-('11122233309', 'Rua Funchal, 500 - Vila Olímpia', '2023-10-21', '16:00:00', 'Milkshake Chocolate', 1);
+INSERT INTO Pedido (Campus, CPF, dataHora, Valor, meioPagamento) VALUES
+('Rua Funchal, 500 - Vila Olímpia', '11122233309', '2023-10-21 16:00:00', 22.00, 'PIX');
+INSERT INTO Pedido_Item (Campus, CPF, dataHora, NomeItem, Quantidade) VALUES
+('Rua Funchal, 500 - Vila Olímpia', '11122233309', '2023-10-21 16:00:00', 'Milkshake Chocolate', 1);
 
 -- Pedido 10 (Funchal)
-INSERT INTO Pedido (CPF_Cliente, Localizacao_Lanchonete, Data, Hora, MeioPagamento, Valor) VALUES
-('11122233310', 'Rua Funchal, 500 - Vila Olímpia', '2023-10-21', '18:00:00', 'Cartão Débito', 12.00);
-INSERT INTO Contem (CPF_Cliente, Localizacao_Lanchonete, Data_Pedido, Hora_Pedido, Nome_Item, Quantidade) VALUES
-('11122233310', 'Rua Funchal, 500 - Vila Olímpia', '2023-10-21', '18:00:00', 'Água Mineral', 2);
+INSERT INTO Pedido (Campus, CPF, dataHora, Valor, meioPagamento) VALUES
+('Rua Funchal, 500 - Vila Olímpia', '11122233310', '2023-10-21 18:00:00', 12.00, 'Cartão Débito');
+INSERT INTO Pedido_Item (Campus, CPF, dataHora, NomeItem, Quantidade) VALUES
+('Rua Funchal, 500 - Vila Olímpia', '11122233310', '2023-10-21 18:00:00', 'Água Mineral', 2);
 
 -- Pedido 11 (Tatuapé)
-INSERT INTO Pedido (CPF_Cliente, Localizacao_Lanchonete, Data, Hora, MeioPagamento, Valor) VALUES
-('11122233311', 'Rua Tuiuti, 1620 - Tatuapé', '2023-10-22', '19:30:00', 'Dinheiro', 26.00);
-INSERT INTO Contem (CPF_Cliente, Localizacao_Lanchonete, Data_Pedido, Hora_Pedido, Nome_Item, Quantidade) VALUES
-('11122233311', 'Rua Tuiuti, 1620 - Tatuapé', '2023-10-22', '19:30:00', 'X-Burger', 1),
-('11122233311', 'Rua Tuiuti, 1620 - Tatuapé', '2023-10-22', '19:30:00', 'Refrigerante Lata', 1);
+INSERT INTO Pedido (Campus, CPF, dataHora, Valor, meioPagamento) VALUES
+('Rua Tuiuti, 1620 - Tatuapé', '11122233311', '2023-10-22 19:30:00', 26.00, 'Dinheiro');
+INSERT INTO Pedido_Item (Campus, CPF, dataHora, NomeItem, Quantidade) VALUES
+('Rua Tuiuti, 1620 - Tatuapé', '11122233311', '2023-10-22 19:30:00', 'X-Burger', 1),
+('Rua Tuiuti, 1620 - Tatuapé', '11122233311', '2023-10-22 19:30:00', 'Refrigerante Lata', 1);
 
 -- Pedido 12 (Tatuapé)
-INSERT INTO Pedido (CPF_Cliente, Localizacao_Lanchonete, Data, Hora, MeioPagamento, Valor) VALUES
-('11122233312', 'Rua Tuiuti, 1620 - Tatuapé', '2023-10-22', '20:00:00', 'PIX', 14.00);
-INSERT INTO Contem (CPF_Cliente, Localizacao_Lanchonete, Data_Pedido, Hora_Pedido, Nome_Item, Quantidade) VALUES
-('11122233312', 'Rua Tuiuti, 1620 - Tatuapé', '2023-10-22', '20:00:00', 'Batata Frita Grande', 1);
+INSERT INTO Pedido (Campus, CPF, dataHora, Valor, meioPagamento) VALUES
+('Rua Tuiuti, 1620 - Tatuapé', '11122233312', '2023-10-22 20:00:00', 14.00, 'PIX');
+INSERT INTO Pedido_Item (Campus, CPF, dataHora, NomeItem, Quantidade) VALUES
+('Rua Tuiuti, 1620 - Tatuapé', '11122233312', '2023-10-22 20:00:00', 'Batata Frita Grande', 1);
 
 -- Pedido 13 (Tatuapé)
-INSERT INTO Pedido (CPF_Cliente, Localizacao_Lanchonete, Data, Hora, MeioPagamento, Valor) VALUES
-('11122233313', 'Rua Tuiuti, 1620 - Tatuapé', '2023-10-22', '20:15:00', 'Cartão Crédito', 22.00);
-INSERT INTO Contem (CPF_Cliente, Localizacao_Lanchonete, Data_Pedido, Hora_Pedido, Nome_Item, Quantidade) VALUES
-('11122233313', 'Rua Tuiuti, 1620 - Tatuapé', '2023-10-22', '20:15:00', 'X-Salada', 1);
+INSERT INTO Pedido (Campus, CPF, dataHora, Valor, meioPagamento) VALUES
+('Rua Tuiuti, 1620 - Tatuapé', '11122233313', '2023-10-22 20:15:00', 22.00, 'Cartão Crédito');
+INSERT INTO Pedido_Item (Campus, CPF, dataHora, NomeItem, Quantidade) VALUES
+('Rua Tuiuti, 1620 - Tatuapé', '11122233313', '2023-10-22 20:15:00', 'X-Salada', 1);
 
 -- Pedido 14 (Tatuapé)
-INSERT INTO Pedido (CPF_Cliente, Localizacao_Lanchonete, Data, Hora, MeioPagamento, Valor) VALUES
-('11122233314', 'Rua Tuiuti, 1620 - Tatuapé', '2023-10-22', '21:00:00', 'Vale Refeição', 28.00);
-INSERT INTO Contem (CPF_Cliente, Localizacao_Lanchonete, Data_Pedido, Hora_Pedido, Nome_Item, Quantidade) VALUES
-('11122233314', 'Rua Tuiuti, 1620 - Tatuapé', '2023-10-22', '21:00:00', 'X-Salada', 1),
-('11122233314', 'Rua Tuiuti, 1620 - Tatuapé', '2023-10-22', '21:00:00', 'Refrigerante Lata', 1);
+INSERT INTO Pedido (Campus, CPF, dataHora, Valor, meioPagamento) VALUES
+('Rua Tuiuti, 1620 - Tatuapé', '11122233314', '2023-10-22 21:00:00', 28.00, 'Vale Refeição');
+INSERT INTO Pedido_Item (Campus, CPF, dataHora, NomeItem, Quantidade) VALUES
+('Rua Tuiuti, 1620 - Tatuapé', '11122233314', '2023-10-22 21:00:00', 'X-Salada', 1),
+('Rua Tuiuti, 1620 - Tatuapé', '11122233314', '2023-10-22 21:00:00', 'Refrigerante Lata', 1);
 
 -- Pedido 15 (Tatuapé)
-INSERT INTO Pedido (CPF_Cliente, Localizacao_Lanchonete, Data, Hora, MeioPagamento, Valor) VALUES
-('11122233315', 'Rua Tuiuti, 1620 - Tatuapé', '2023-10-22', '21:30:00', 'Dinheiro', 8.00);
-INSERT INTO Contem (CPF_Cliente, Localizacao_Lanchonete, Data_Pedido, Hora_Pedido, Nome_Item, Quantidade) VALUES
-('11122233315', 'Rua Tuiuti, 1620 - Tatuapé', '2023-10-22', '21:30:00', 'Brigadeiro', 2);
+INSERT INTO Pedido (Campus, CPF, dataHora, Valor, meioPagamento) VALUES
+('Rua Tuiuti, 1620 - Tatuapé', '11122233315', '2023-10-22 21:30:00', 8.00, 'Dinheiro');
+INSERT INTO Pedido_Item (Campus, CPF, dataHora, NomeItem, Quantidade) VALUES
+('Rua Tuiuti, 1620 - Tatuapé', '11122233315', '2023-10-22 21:30:00', 'Brigadeiro', 2);
 
 -- Pedido 16 (Pinheiros)
-INSERT INTO Pedido (CPF_Cliente, Localizacao_Lanchonete, Data, Hora, MeioPagamento, Valor) VALUES
-('11122233316', 'Rua dos Pinheiros, 300 - Pinheiros', '2023-10-23', '18:00:00', 'Cartão Crédito', 43.00);
-INSERT INTO Contem (CPF_Cliente, Localizacao_Lanchonete, Data_Pedido, Hora_Pedido, Nome_Item, Quantidade) VALUES
-('11122233316', 'Rua dos Pinheiros, 300 - Pinheiros', '2023-10-23', '18:00:00', 'X-Bacon', 1),
-('11122233316', 'Rua dos Pinheiros, 300 - Pinheiros', '2023-10-23', '18:00:00', 'Café Expresso', 1);
+INSERT INTO Pedido (Campus, CPF, dataHora, Valor, meioPagamento) VALUES
+('Rua dos Pinheiros, 300 - Pinheiros', '11122233316', '2023-10-23 18:00:00', 43.00, 'Cartão Crédito');
+INSERT INTO Pedido_Item (Campus, CPF, dataHora, NomeItem, Quantidade) VALUES
+('Rua dos Pinheiros, 300 - Pinheiros', '11122233316', '2023-10-23 18:00:00', 'X-Bacon', 1),
+('Rua dos Pinheiros, 300 - Pinheiros', '11122233316', '2023-10-23 18:00:00', 'Café Expresso', 1);
 
 -- Pedido 17 (Pinheiros)
-INSERT INTO Pedido (CPF_Cliente, Localizacao_Lanchonete, Data, Hora, MeioPagamento, Valor) VALUES
-('11122233317', 'Rua dos Pinheiros, 300 - Pinheiros', '2023-10-23', '19:00:00', 'Cartão Débito', 26.00);
-INSERT INTO Contem (CPF_Cliente, Localizacao_Lanchonete, Data_Pedido, Hora_Pedido, Nome_Item, Quantidade) VALUES
-('11122233317', 'Rua dos Pinheiros, 300 - Pinheiros', '2023-10-23', '19:00:00', 'Milkshake Chocolate', 1);
+INSERT INTO Pedido (Campus, CPF, dataHora, Valor, meioPagamento) VALUES
+('Rua dos Pinheiros, 300 - Pinheiros', '11122233317', '2023-10-23 19:00:00', 26.00, 'Cartão Débito');
+INSERT INTO Pedido_Item (Campus, CPF, dataHora, NomeItem, Quantidade) VALUES
+('Rua dos Pinheiros, 300 - Pinheiros', '11122233317', '2023-10-23 19:00:00', 'Milkshake Chocolate', 1);
 
 -- Pedido 18 (Pinheiros)
-INSERT INTO Pedido (CPF_Cliente, Localizacao_Lanchonete, Data, Hora, MeioPagamento, Valor) VALUES
-('11122233318', 'Rua dos Pinheiros, 300 - Pinheiros', '2023-10-23', '19:30:00', 'PIX', 8.00);
-INSERT INTO Contem (CPF_Cliente, Localizacao_Lanchonete, Data_Pedido, Hora_Pedido, Nome_Item, Quantidade) VALUES
-('11122233318', 'Rua dos Pinheiros, 300 - Pinheiros', '2023-10-23', '19:30:00', 'Café Expresso', 1);
+INSERT INTO Pedido (Campus, CPF, dataHora, Valor, meioPagamento) VALUES
+('Rua dos Pinheiros, 300 - Pinheiros', '11122233318', '2023-10-23 19:30:00', 8.00, 'PIX');
+INSERT INTO Pedido_Item (Campus, CPF, dataHora, NomeItem, Quantidade) VALUES
+('Rua dos Pinheiros, 300 - Pinheiros', '11122233318', '2023-10-23 19:30:00', 'Café Expresso', 1);
 
 -- Pedido 19 (Pinheiros)
-INSERT INTO Pedido (CPF_Cliente, Localizacao_Lanchonete, Data, Hora, MeioPagamento, Valor) VALUES
-('11122233319', 'Rua dos Pinheiros, 300 - Pinheiros', '2023-10-23', '20:00:00', 'Cartão Crédito', 41.50);
-INSERT INTO Contem (CPF_Cliente, Localizacao_Lanchonete, Data_Pedido, Hora_Pedido, Nome_Item, Quantidade) VALUES
-('11122233319', 'Rua dos Pinheiros, 300 - Pinheiros', '2023-10-23', '20:00:00', 'X-Bacon', 1),
-('11122233319', 'Rua dos Pinheiros, 300 - Pinheiros', '2023-10-23', '20:00:00', 'Brigadeiro', 1);
+INSERT INTO Pedido (Campus, CPF, dataHora, Valor, meioPagamento) VALUES
+('Rua dos Pinheiros, 300 - Pinheiros', '11122233319', '2023-10-23 20:00:00', 41.50, 'Cartão Crédito');
+INSERT INTO Pedido_Item (Campus, CPF, dataHora, NomeItem, Quantidade) VALUES
+('Rua dos Pinheiros, 300 - Pinheiros', '11122233319', '2023-10-23 20:00:00', 'X-Bacon', 1),
+('Rua dos Pinheiros, 300 - Pinheiros', '11122233319', '2023-10-23 20:00:00', 'Brigadeiro', 1);
 
 -- Pedido 20 (Pinheiros)
-INSERT INTO Pedido (CPF_Cliente, Localizacao_Lanchonete, Data, Hora, MeioPagamento, Valor) VALUES
-('11122233320', 'Rua dos Pinheiros, 300 - Pinheiros', '2023-10-23', '21:00:00', 'Dinheiro', 7.00);
-INSERT INTO Contem (CPF_Cliente, Localizacao_Lanchonete, Data_Pedido, Hora_Pedido, Nome_Item, Quantidade) VALUES
-('11122233320', 'Rua dos Pinheiros, 300 - Pinheiros', '2023-10-23', '21:00:00', 'Água Mineral', 1);
+INSERT INTO Pedido (Campus, CPF, dataHora, Valor, meioPagamento) VALUES
+('Rua dos Pinheiros, 300 - Pinheiros', '11122233320', '2023-10-23 21:00:00', 7.00, 'Dinheiro');
+INSERT INTO Pedido_Item (Campus, CPF, dataHora, NomeItem, Quantidade) VALUES
+('Rua dos Pinheiros, 300 - Pinheiros', '11122233320', '2023-10-23 21:00:00', 'Água Mineral', 1);
 
 -- Pedido 21 (Moema)
-INSERT INTO Pedido (CPF_Cliente, Localizacao_Lanchonete, Data, Hora, MeioPagamento, Valor) VALUES
-('11122233321', 'Av. Ibirapuera, 3103 - Moema', '2023-10-24', '11:30:00', 'Cartão Crédito', 33.00);
-INSERT INTO Contem (CPF_Cliente, Localizacao_Lanchonete, Data_Pedido, Hora_Pedido, Nome_Item, Quantidade) VALUES
-('11122233321', 'Av. Ibirapuera, 3103 - Moema', '2023-10-24', '11:30:00', 'X-Salada', 1),
-('11122233321', 'Av. Ibirapuera, 3103 - Moema', '2023-10-24', '11:30:00', 'Refrigerante Lata', 1);
+INSERT INTO Pedido (Campus, CPF, dataHora, Valor, meioPagamento) VALUES
+('Av. Ibirapuera, 3103 - Moema', '11122233321', '2023-10-24 11:30:00', 33.00, 'Cartão Crédito');
+INSERT INTO Pedido_Item (Campus, CPF, dataHora, NomeItem, Quantidade) VALUES
+('Av. Ibirapuera, 3103 - Moema', '11122233321', '2023-10-24 11:30:00', 'X-Salada', 1),
+('Av. Ibirapuera, 3103 - Moema', '11122233321', '2023-10-24 11:30:00', 'Refrigerante Lata', 1);
 
 -- Pedido 22 (Moema)
-INSERT INTO Pedido (CPF_Cliente, Localizacao_Lanchonete, Data, Hora, MeioPagamento, Valor) VALUES
-('11122233322', 'Av. Ibirapuera, 3103 - Moema', '2023-10-24', '12:00:00', 'Vale Refeição', 16.00);
-INSERT INTO Contem (CPF_Cliente, Localizacao_Lanchonete, Data_Pedido, Hora_Pedido, Nome_Item, Quantidade) VALUES
-('11122233322', 'Av. Ibirapuera, 3103 - Moema', '2023-10-24', '12:00:00', 'Batata Frita Grande', 1);
+INSERT INTO Pedido (Campus, CPF, dataHora, Valor, meioPagamento) VALUES
+('Av. Ibirapuera, 3103 - Moema', '11122233322', '2023-10-24 12:00:00', 16.00, 'Vale Refeição');
+INSERT INTO Pedido_Item (Campus, CPF, dataHora, NomeItem, Quantidade) VALUES
+('Av. Ibirapuera, 3103 - Moema', '11122233322', '2023-10-24 12:00:00', 'Batata Frita Grande', 1);
 
 -- Pedido 23 (Moema)
-INSERT INTO Pedido (CPF_Cliente, Localizacao_Lanchonete, Data, Hora, MeioPagamento, Valor) VALUES
-('11122233323', 'Av. Ibirapuera, 3103 - Moema', '2023-10-24', '13:00:00', 'PIX', 8.00);
-INSERT INTO Contem (CPF_Cliente, Localizacao_Lanchonete, Data_Pedido, Hora_Pedido, Nome_Item, Quantidade) VALUES
-('11122233323', 'Av. Ibirapuera, 3103 - Moema', '2023-10-24', '13:00:00', 'Coxinha de Frango', 1);
+INSERT INTO Pedido (Campus, CPF, dataHora, Valor, meioPagamento) VALUES
+('Av. Ibirapuera, 3103 - Moema', '11122233323', '2023-10-24 13:00:00', 8.00, 'PIX');
+INSERT INTO Pedido_Item (Campus, CPF, dataHora, NomeItem, Quantidade) VALUES
+('Av. Ibirapuera, 3103 - Moema', '11122233323', '2023-10-24 13:00:00', 'Coxinha de Frango', 1);
 
 -- Pedido 24 (Moema)
-INSERT INTO Pedido (CPF_Cliente, Localizacao_Lanchonete, Data, Hora, MeioPagamento, Valor) VALUES
-('11122233324', 'Av. Ibirapuera, 3103 - Moema', '2023-10-24', '14:00:00', 'Cartão Débito', 24.00);
-INSERT INTO Contem (CPF_Cliente, Localizacao_Lanchonete, Data_Pedido, Hora_Pedido, Nome_Item, Quantidade) VALUES
-('11122233324', 'Av. Ibirapuera, 3103 - Moema', '2023-10-24', '14:00:00', 'Milkshake Chocolate', 1);
+INSERT INTO Pedido (Campus, CPF, dataHora, Valor, meioPagamento) VALUES
+('Av. Ibirapuera, 3103 - Moema', '11122233324', '2023-10-24 14:00:00', 24.00, 'Cartão Débito');
+INSERT INTO Pedido_Item (Campus, CPF, dataHora, NomeItem, Quantidade) VALUES
+('Av. Ibirapuera, 3103 - Moema', '11122233324', '2023-10-24 14:00:00', 'Milkshake Chocolate', 1);
 
 -- Pedido 25 (Moema)
-INSERT INTO Pedido (CPF_Cliente, Localizacao_Lanchonete, Data, Hora, MeioPagamento, Valor) VALUES
-('11122233325', 'Av. Ibirapuera, 3103 - Moema', '2023-10-24', '15:00:00', 'Dinheiro', 7.00);
-INSERT INTO Contem (CPF_Cliente, Localizacao_Lanchonete, Data_Pedido, Hora_Pedido, Nome_Item, Quantidade) VALUES
-('11122233325', 'Av. Ibirapuera, 3103 - Moema', '2023-10-24', '15:00:00', 'Refrigerante Lata', 1);
+INSERT INTO Pedido (Campus, CPF, dataHora, Valor, meioPagamento) VALUES
+('Av. Ibirapuera, 3103 - Moema', '11122233325', '2023-10-24 15:00:00', 7.00, 'Dinheiro');
+INSERT INTO Pedido_Item (Campus, CPF, dataHora, NomeItem, Quantidade) VALUES
+('Av. Ibirapuera, 3103 - Moema', '11122233325', '2023-10-24 15:00:00', 'Refrigerante Lata', 1);
