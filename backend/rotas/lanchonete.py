@@ -36,3 +36,17 @@ def deleta_lanchonete():
         return jsonify("Não foi possível solicitar a remoção da lanchonete"), 400
 
     return jsonify("Remoção da lanchonete solicitada com sucesso!"), 200
+
+# Atualiza uma Lanchonete
+@lanchonete_blueprint.route("/lanchonete", methods=["PUT"])
+def atualiza_lanchonete():
+    localizacao = request.args.get("localizacao", "")
+    nome = request.args.get("nome", "")
+    localizacao_nova = request.args.get("localizacao_nova", "")
+    nome_novo = request.args.get("nome_novo", "")
+    update = LanchoneteDatabase().atualiza_lanchonete(localizacao, localizacao_nova, nome, nome_novo)
+
+    if not update:
+        return jsonify("Não foi possível solicitar a atualização da lanchonete"), 400
+
+    return jsonify("Atualização da lanchonete solicitada com sucesso!"), 200

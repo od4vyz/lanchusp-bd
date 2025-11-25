@@ -12,24 +12,24 @@ collection:
     meta:
       id: req_a4083e70b826431baaebc0097b73238e
       created: 1763936280681
-      modified: 1763988574965
+      modified: 1764018842214
       isPrivate: false
       description: ""
       sortKey: -1763937730512
     method: GET
     parameters:
       - name: cpf
-        value: "11111111111"
+        value: "11122233304"
         description: ""
         disabled: true
       - name: nome
-        value: Heloisa Santos
-        description: ""
-        disabled: true
-      - name: numero_cliente
-        value: "7"
+        value: André Portela
         description: ""
         disabled: false
+      - name: id
+        value: "4"
+        description: ""
+        disabled: true
     headers:
       - name: User-Agent
         value: insomnia/12.1.0
@@ -48,7 +48,7 @@ collection:
     meta:
       id: req_ac13e42e2a3f4566880d153fce187cce
       created: 1763937730612
-      modified: 1763950442395
+      modified: 1764018883695
       isPrivate: false
       description: ""
       sortKey: -1763937730612
@@ -57,12 +57,12 @@ collection:
       - name: cpf
         value: "66666666666"
         description: ""
-        disabled: false
-      - name: nome
-        value: Eduardo Mendes
-        description: ""
         disabled: true
-      - name: numero_cliente
+      - name: nome
+        value: André Portela
+        description: ""
+        disabled: false
+      - name: id
         value: "5"
         description: ""
         disabled: true
@@ -84,7 +84,7 @@ collection:
     meta:
       id: req_047e58e9b2b445e7a816936ca9c7c18f
       created: 1763941738703
-      modified: 1763988475159
+      modified: 1764018828977
       isPrivate: false
       description: ""
       sortKey: -1763937730562
@@ -93,7 +93,7 @@ collection:
       mimeType: application/json
       text: |-
         {
-        	"CPF": "8",
+        	"CPF": "21122233304",
         	"nome": "André Portela"
         }
     headers:
@@ -116,18 +116,18 @@ collection:
     meta:
       id: req_c27a2790291349ca966f07e9b24a726f
       created: 1763951385920
-      modified: 1763951650281
+      modified: 1764019148578
       isPrivate: false
       description: ""
       sortKey: -1763951385920
     method: GET
     parameters:
       - name: cpf
-        value: "67         "
+        value: "99922233304"
         description: ""
         disabled: true
       - name: nome
-        value: André Portela
+        value: André Portela Lino
         description: ""
         disabled: false
     headers:
@@ -148,7 +148,7 @@ collection:
     meta:
       id: req_2d1e7d82acc242cc870668ad956d259b
       created: 1763951448779
-      modified: 1763951532268
+      modified: 1764018909073
       isPrivate: false
       description: ""
       sortKey: -1763951448779
@@ -157,8 +157,8 @@ collection:
       mimeType: application/json
       text: |-
         {
-        	"CPF": "67",
-        	"nome": "André Portela Lino"
+        	"CPF": "99922233304",
+        	"nome": "André Portela"
         }
     headers:
       - name: Content-Type
@@ -180,7 +180,7 @@ collection:
     meta:
       id: req_8147b321b60d4dc796183b6281be07ff
       created: 1763951555733
-      modified: 1763951658438
+      modified: 1764019155936
       isPrivate: false
       description: ""
       sortKey: -1763951555733
@@ -191,7 +191,7 @@ collection:
         description: ""
         disabled: true
       - name: nome
-        value: André Portela
+        value: André Portela Lino
         description: ""
         disabled: false
     headers:
@@ -212,18 +212,18 @@ collection:
     meta:
       id: req_31b97caf0a6e4dce82c7edf305ce176e
       created: 1763953135554
-      modified: 1763953503176
+      modified: 1764019671037
       isPrivate: false
       description: ""
       sortKey: -1763953135554
     method: GET
     parameters:
       - name: localizacao
-        value: Rua 11
+        value: Rua Funchal, 500 - Vila Olímpia
         description: ""
-        disabled: false
+        disabled: true
       - name: nome
-        value: Lanchusp
+        value: Moema Snacks
         description: ""
         disabled: true
     headers:
@@ -276,7 +276,7 @@ collection:
     meta:
       id: req_85a4c709fd604165ae78fd12595339f7
       created: 1763953369649
-      modified: 1763953510635
+      modified: 1764019980007
       isPrivate: false
       description: ""
       sortKey: -1763953369649
@@ -285,105 +285,9 @@ collection:
       - name: localizacao
         value: Rua 11
         description: ""
-        disabled: false
-      - name: nome
-        value: Lanchusp
-        description: ""
         disabled: true
-    headers:
-      - name: User-Agent
-        value: insomnia/12.1.0
-        description: ""
-        disabled: false
-    settings:
-      renderRequestBody: true
-      encodeUrl: true
-      followRedirects: global
-      cookies:
-        send: true
-        store: true
-      rebuildPath: true
-  - url: http://127.0.0.1:8000/fornecedor
-    name: Fornecedor
-    meta:
-      id: req_086c03b7a9954bba9800028d71d23c7d
-      created: 1763954076663
-      modified: 1763955514823
-      isPrivate: false
-      description: ""
-      sortKey: -1763953369749
-    method: GET
-    parameters:
-      - name: localizacao
-        value: Rua do Milho, 2
-        description: ""
-        disabled: false
       - name: nome
-        value: Lacteos Puro
-        description: ""
-        disabled: true
-    headers:
-      - name: User-Agent
-        value: insomnia/12.1.0
-        description: ""
-        disabled: false
-    settings:
-      renderRequestBody: true
-      encodeUrl: true
-      followRedirects: global
-      cookies:
-        send: true
-        store: true
-      rebuildPath: true
-  - url: http://127.0.0.1:8000/fornecedor
-    name: Fornecedor
-    meta:
-      id: req_81c20e0c84a642ee91fdbae848ddecf2
-      created: 1763954195554
-      modified: 1763954288303
-      isPrivate: false
-      description: ""
-      sortKey: -1763953369849
-    method: POST
-    body:
-      mimeType: application/json
-      text: |-
-        {
-        	"localizacao": "Rua do Milho, 2",
-        	"nome": "Ponto do Milho"
-        }
-    headers:
-      - name: Content-Type
-        value: application/json
-      - name: User-Agent
-        value: insomnia/12.1.0
-        description: ""
-        disabled: false
-    settings:
-      renderRequestBody: true
-      encodeUrl: true
-      followRedirects: global
-      cookies:
-        send: true
-        store: true
-      rebuildPath: true
-  - url: http://127.0.0.1:8000/fornecedor
-    name: Fornecedor
-    meta:
-      id: req_303bee8aed084e989c52b1bf55e13eb9
-      created: 1763954244740
-      modified: 1763954314430
-      isPrivate: false
-      description: ""
-      sortKey: -1763953369949
-    method: DELETE
-    parameters:
-      - name: localizacao
-        value: Rua do Milho, 2
-        description: ""
-        disabled: false
-      - name: nome
-        value: Ponto do Milho
+        value: Lanchusp Legal
         description: ""
         disabled: false
     headers:
@@ -404,22 +308,14 @@ collection:
     meta:
       id: req_2181057b1fe548dab36b0b990997c743
       created: 1763955494948
-      modified: 1763956450112
+      modified: 1764020562144
       isPrivate: false
       description: ""
       sortKey: -1763953369999
     method: GET
     parameters:
-      - name: categoria
-        value: Água com Gás
-        description: ""
-        disabled: true
-      - name: lanchonete_end
-        value: Rua 10
-        description: ""
-        disabled: true
       - name: nome
-        value: Água com Gás (200ml)
+        value: Queijo Prato
         description: ""
         disabled: true
     headers:
@@ -440,7 +336,7 @@ collection:
     meta:
       id: req_8710c940452245069ffbb2d5508a90a1
       created: 1763955846347
-      modified: 1763956388817
+      modified: 1764023363496
       isPrivate: false
       description: ""
       sortKey: -1763953370049
@@ -449,23 +345,8 @@ collection:
       mimeType: application/json
       text: |-
         {
-        	"nome":"Água (500ml)",
-        	"lanchonete_end": "Rua 10",
-        	"categoria":"Água"
+        	"nome":"Açaí 500ml"
         }
-    parameters:
-      - name: categoria
-        value: Ingrediente
-        description: ""
-        disabled: true
-      - name: lanchonete
-        value: Av. Bandeirantes, 3903 - Vila Monte Alegre, Ribeirão Preto - SP
-        description: ""
-        disabled: true
-      - name: nome
-        value: Água (copo)
-        description: ""
-        disabled: true
     headers:
       - name: Content-Type
         value: application/json
@@ -486,24 +367,16 @@ collection:
     meta:
       id: req_0b87c624e10145a0ac6d6888a4766593
       created: 1763955995560
-      modified: 1763956440753
+      modified: 1764022923777
       isPrivate: false
       description: ""
       sortKey: -1763953370099
     method: DELETE
     parameters:
-      - name: categoria
-        value: Água com Gás
-        description: ""
-        disabled: true
-      - name: lanchonete_end
-        value: Rua 10
+      - name: nome
+        value: None
         description: ""
         disabled: false
-      - name: nome
-        value: Água (500ml)
-        description: ""
-        disabled: true
     headers:
       - name: User-Agent
         value: insomnia/12.1.0
@@ -522,7 +395,7 @@ collection:
     meta:
       id: req_f233e97300cf4718a1525de291becc9c
       created: 1763988253944
-      modified: 1763989040407
+      modified: 1764018865974
       isPrivate: false
       description: ""
       sortKey: -1763948974115.75
@@ -531,21 +404,406 @@ collection:
       - name: cpf
         value: "77777777777"
         description: ""
-        disabled: false
+        disabled: true
       - name: nome
         value: Gustavo Lanches
         description: ""
-        disabled: false
-      - name: numero_cliente
-        value: "7"
+        disabled: true
+      - name: id
+        value: "27"
         description: ""
         disabled: false
       - name: cpf_novo
-        value: "77777777714"
+        value: "77122233304"
         description: ""
         disabled: false
       - name: nome_novo
         value: Gustavo Pereira
+        description: ""
+        disabled: true
+    headers:
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/funcionario
+    name: Funcionário
+    meta:
+      id: req_de75f6d22a004418aae549dea3dfa698
+      created: 1764018735824
+      modified: 1764019176939
+      isPrivate: false
+      description: ""
+      sortKey: -1763952543121.125
+    method: PUT
+    parameters:
+      - name: cpf
+        value: "99922233304"
+        description: ""
+        disabled: false
+      - name: nome
+        value: Gustavo Lanches
+        description: ""
+        disabled: true
+      - name: id
+        value: "7"
+        description: ""
+        disabled: true
+      - name: cpf_novo
+        value: "99922233377"
+        description: ""
+        disabled: false
+      - name: nome_novo
+        value: André Portela Lino
+        description: ""
+        disabled: false
+    headers:
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/lanchonete
+    name: Lanchonete
+    meta:
+      id: req_55c72db4a37f426d804834125124611b
+      created: 1764019170020
+      modified: 1764019963445
+      isPrivate: false
+      description: ""
+      sortKey: -1763953369699
+    method: PUT
+    parameters:
+      - name: localizacao
+        value: Rua dos Pinheiros, 300 - Pinheiros
+        description: ""
+        disabled: true
+      - name: nome
+        value: Lanchonete Paulista
+        description: ""
+        disabled: false
+      - name: localizacao_nova
+        value: Rua dos Pinheiros, 301 - Pinheiros
+        description: ""
+        disabled: true
+      - name: nome_novo
+        value: Lanchusp Paulista
+        description: ""
+        disabled: false
+    headers:
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/item
+    name: Item
+    meta:
+      id: req_62fead70a64248a19ace7659c0e8bfd9
+      created: 1764020332621
+      modified: 1764020631926
+      isPrivate: false
+      description: ""
+      sortKey: -1763953370199
+    method: PUT
+    parameters:
+      - name: nome
+        value: Açaí
+        description: ""
+        disabled: false
+      - name: nome_novo
+        value: Açaí Grande
+        description: ""
+        disabled: false
+    headers:
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/receita
+    name: Receita
+    meta:
+      id: req_8254026393b44e9eb6d9073ec2ac40f8
+      created: 1764021817761
+      modified: 1764021839371
+      isPrivate: false
+      description: ""
+      sortKey: -1763953370299
+    method: GET
+    parameters:
+      - name: nome
+        value: Queijo Prato
+        description: ""
+        disabled: true
+      - name: categoria
+        value: ""
+        description: ""
+        disabled: true
+    headers:
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/receita
+    name: Receita
+    meta:
+      id: req_2bb58c61d0e14ea3bb47fbf07a536794
+      created: 1764022826758
+      modified: 1764023389587
+      isPrivate: false
+      description: ""
+      sortKey: -1763953370399
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"Nome_Item":"Açaí 500ml",
+        	"Categoria": "Sobremesa",
+        	"Tempo_Medio_Preparo": 5
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/receita
+    name: Receita
+    meta:
+      id: req_d5aa7c612255426a9878bb44f48ad031
+      created: 1764023319320
+      modified: 1764023421879
+      isPrivate: false
+      description: ""
+      sortKey: -1763953370499
+    method: DELETE
+    parameters:
+      - name: nome
+        value: Açaí
+        description: ""
+        disabled: true
+      - name: categoria
+        value: Sobremesa
+        description: ""
+        disabled: false
+    headers:
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/receita
+    name: Receita
+    meta:
+      id: req_b606b65f706d40f2a6f77c777c611da0
+      created: 1764024000473
+      modified: 1764024087999
+      isPrivate: false
+      description: ""
+      sortKey: -1763953370599
+    method: PUT
+    parameters:
+      - name: nome
+        value: Açaí 500ml
+        description: ""
+        disabled: false
+      - name: nome_novo
+        value: Açaí 200ml
+        description: ""
+        disabled: false
+      - name: categoria_nova
+        value: Sobremesas
+        description: ""
+        disabled: false
+      - name: tempo_medio_preparo
+        value: "12"
+        description: ""
+        disabled: false
+    headers:
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/produtoPronto
+    name: Produto_Pronto
+    meta:
+      id: req_355fd4921e614fad8e7e87922b1b6768
+      created: 1764024454153
+      modified: 1764024788478
+      isPrivate: false
+      description: ""
+      sortKey: -1763953370699
+    method: GET
+    parameters:
+      - name: nome
+        value: Água Mineral
+        description: ""
+        disabled: true
+      - name: categoria
+        value: Bebida
+        description: ""
+        disabled: true
+    headers:
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/produtoPronto
+    name: Produto_Pronto
+    meta:
+      id: req_0c55c0334992401d80bee0c9c48bb8e6
+      created: 1764024751439
+      modified: 1764024806249
+      isPrivate: false
+      description: ""
+      sortKey: -1763953370799
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"Nome_Item":"Açaí 200ml",
+        	"Categoria": "Sobremesa"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/produtoPronto
+    name: Produto_Pronto
+    meta:
+      id: req_77425e4a68fb4139ba6b567c7eb8da30
+      created: 1764025378310
+      modified: 1764025407191
+      isPrivate: false
+      description: ""
+      sortKey: -1763953370899
+    method: DELETE
+    parameters:
+      - name: nome
+        value: Açaí 200ml
+        description: ""
+        disabled: true
+      - name: categoria
+        value: Sobremesa
+        description: ""
+        disabled: false
+    headers:
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/produtoPronto
+    name: Produto_Pronto
+    meta:
+      id: req_5a7f5a5bd3f9471c9de3720f3ff1aa99
+      created: 1764025709832
+      modified: 1764025741656
+      isPrivate: false
+      description: ""
+      sortKey: -1763953370999
+    method: PUT
+    parameters:
+      - name: nome
+        value: Açaí 200ml
+        description: ""
+        disabled: false
+      - name: nome_novo
+        value: Açaí 500ml
+        description: ""
+        disabled: false
+      - name: categoria_nova
+        value: Sobremesas
         description: ""
         disabled: false
     headers:

@@ -10,8 +10,8 @@ def get_cliente():
     # Parâmetros - Filtra por cpf, nome ou número do cliente
     cpf = request.args.get("cpf", "")
     nome = request.args.get("nome", "")
-    numero_cliente = request.args.get("numero_cliente", "")
-    return jsonify(ClienteDatabase().get_cliente(cpf, nome, numero_cliente)), 200
+    id = request.args.get("id", "")
+    return jsonify(ClienteDatabase().get_cliente(cpf, nome, id)), 200
 
 # Insere um Cliente novo
 @cliente_blueprint.route("/cliente", methods=["POST"])
@@ -31,8 +31,8 @@ def insere_cliente():
 def deleta_cliente():
     cpf = request.args.get("cpf", "")
     nome = request.args.get("nome", "")
-    numero_cliente = request.args.get("numero_cliente", "")
-    delete = ClienteDatabase().remove_cliente(cpf, nome, numero_cliente)
+    id = request.args.get("id", "")
+    delete = ClienteDatabase().remove_cliente(cpf, nome, id)
 
     if not delete:
         return jsonify("Não foi possível solicitar a remoção do cliente"), 400
@@ -44,10 +44,10 @@ def deleta_cliente():
 def atualiza_cliente():
     cpf = request.args.get("cpf", "")
     nome = request.args.get("nome", "")
-    numero_cliente = request.args.get("numero_cliente", "")
+    id = request.args.get("id", "")
     cpf_novo = request.args.get("cpf_novo", "")
     nome_novo = request.args.get("nome_novo", "")
-    delete = ClienteDatabase().atualiza_cliente(cpf, cpf_novo, nome, nome_novo, numero_cliente)
+    delete = ClienteDatabase().atualiza_cliente(cpf, cpf_novo, nome, nome_novo, id)
 
     if not delete:
         return jsonify("Não foi possível solicitar a atualização do cliente"), 400

@@ -38,3 +38,25 @@ class LanchoneteDatabase():
                     statement+=f"WHERE l.nome = '{nome}'\n"
 
         return self.db.execute_statement(statement)
+    
+    # Atualiza uma lanchonete com base na localização ou nome
+    def atualiza_lanchonete(self, localizacao:str, localizacao_nova:str, nome:str, nome_novo:str) -> bool:
+        statement = "UPDATE Lanchonete l "
+        # SET
+        if localizacao_nova:
+            statement+=f"SET localizacao = '{localizacao_nova}'\n" 
+        if nome_novo:
+            if "SET" in statement:
+                statement+=f", nome = '{nome_novo}'\n"
+            else:
+                statement+=f"SET nome = '{nome_novo}'\n"
+        # WHERE
+        if localizacao:
+            statement+=f"WHERE l.localizacao = '{localizacao}'\n" 
+        if nome:
+            if "WHERE" in statement:
+                statement+=f"AND l.nome = '{nome}'\n"
+            else:
+                statement+=f"WHERE l.nome = '{nome}'\n"
+            
+        return self.db.execute_statement(statement)
