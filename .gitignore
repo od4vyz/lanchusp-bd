@@ -1,0 +1,18 @@
+# Byte-code files
+*.pyc
+__pycache__/
+
+# Virtual environment
+.venv/
+venv/
+
+# Editor/IDE files
+.vscode/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Logs e arquivos temporários
+*.log
+tmp/
