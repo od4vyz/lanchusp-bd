@@ -57,6 +57,7 @@ class FuncionarioDatabase():
                 """
         return self.db.execute_select_all(query)
     
+    # Retorna a média salarial dos Funcionários por cargo
     def get_media_salarial_cargo(self):
         query = f"""
                 SELECT Cargo, 
@@ -68,6 +69,21 @@ class FuncionarioDatabase():
                 """
         return self.db.execute_select_all(query)
 
+    # Retorna a quantidade de funcionários de cada lanchonetes por turno
+    def get_funcionarios_turno(self):
+        query = f"""
+                SELECT Campus,
+                CASE 
+                WHEN horarioEntrada < '12:00:00' THEN 'Manhã'
+                WHEN horarioEntrada BETWEEN '12:00:00' AND '18:00:00' THEN 'Tarde'
+                ELSE 'Noite'
+                END AS Turno,
+                COUNT(*) AS Qtd_Funcionarios
+                FROM Quadro_Funcionarios
+                GROUP BY Campus, Turno
+                ORDER BY Campus, Turno;
+                """
+        return self.db.execute_select_all(query)
     
     # Registra um novo funcionário no Banco de Dados
     def regristra_funcionario(self, cpf:str, nome:str) -> bool:

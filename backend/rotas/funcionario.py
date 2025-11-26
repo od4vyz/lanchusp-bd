@@ -18,6 +18,10 @@ def get_funcionarios_lanchonete():
     campus = request.args.get("campus", "")
     return jsonify(FuncionarioDatabase().get_funcionarios_lanchonete(campus)), 200
 
+# Retorna a quantidade de funcionários de cada lanchonetes por turno
+@funcionario_blueprint.route("/funcionarios_turno", methods=["GET"])
+def get_funcionarios_turno():    
+    return jsonify(FuncionarioDatabase().get_funcionarios_turno()), 200
 
 # Retorna a média salarial dos Funcionários por cargo
 @funcionario_blueprint.route("/media_salarial_cargo", methods=["GET"])
