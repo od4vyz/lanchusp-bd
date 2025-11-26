@@ -51,6 +51,7 @@ class ItemDatabase():
                 """
         return self.db.execute_select_all(query)
 
+    # Retorna itens de sucesso que devem ser reabastecidos (estoque abaixo de 10 unidades)
     def get_itens_sucesso_faltantes(self):
         query = """
                 SELECT C.NomeItem, C.Campus
@@ -59,6 +60,20 @@ class ItemDatabase():
                 WHERE C.qtdDisponivel = 0
                 GROUP BY C.NomeItem, C.Campus
                 HAVING SUM(PI.Quantidade) > 10;
+                """
+        return self.db.execute_select_all(query)
+    
+    # Retorna quantidade de opções de itens disponíveis por categoria em cada lanchonete
+    def get_qtd_itens_categoria(self):
+        query = """
+                SELECT PI.Campus, I.Categoria,
+                COUNT(DISTINCT C.NomeItem) AS Variedade_Itens_No_Cardapio,
+                SUM(PI.Quantidade * C.Preco) AS Faturamento_Total_Historico
+                FROM Item I
+                JOIN Catalogo C ON I.Nome = C.NomeItem
+                LEFT JOIN Pedido_Item PI ON C.NomeItem = PI.NomeItem AND C.Campus = PI.Campus
+                GROUP BY PI.Campus, I.Categoria
+                ORDER BY Faturamento_Total_Historico DESC;
                 """
         return self.db.execute_select_all(query)
 

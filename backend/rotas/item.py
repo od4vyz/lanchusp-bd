@@ -32,6 +32,11 @@ def get_analise_vendas_categoria():
 def get_itens_sucesso_faltantes():
     return jsonify(ItemDatabase().get_itens_sucesso_faltantes()), 200
 
+# Retorna quantidade de opções de itens disponíveis por categoria em cada lanchonete
+@item_blueprint.route("/qtd_itens_categoria", methods=["GET"])
+def get_qtd_itens_categoria():
+    return jsonify(ItemDatabase().get_qtd_itens_categoria()), 200
+
 # Insere um Item novo
 @item_blueprint.route("/item", methods=["POST"])
 def insere_item():
