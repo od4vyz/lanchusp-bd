@@ -13,6 +13,16 @@ class ItemDatabase():
             query+=f"WHERE i.nome = '{nome}'\n"
 
         return self.db.execute_select_all(query)
+
+    # Busca a diferença entre o maior e menor preço entre itens vendidos entre lanchonetes diferentes
+    def get_diferenca_precos_item(self):
+        query = """
+                SELECT NomeItem, (MAX(Preco) - MIN(Preco)) AS Diferenca, MIN(Preco) AS Menor_Preco, MAX(Preco) AS Maior_Preco
+                FROM Catalogo
+                GROUP BY NomeItem
+                HAVING MIN(Preco) <> MAX(Preco);
+                """
+        return self.db.execute_select_all(query)
     
     # Registra um novo Item no Banco de Dados
     def regristra_item(self, nome:str) -> bool:

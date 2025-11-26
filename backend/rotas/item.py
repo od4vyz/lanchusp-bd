@@ -11,6 +11,11 @@ def get_item():
     nome = request.args.get("nome", "")
     return jsonify(ItemDatabase().get_item(nome)), 200
 
+# Retorna a diferença de preços de itens vendidos entre lanchonetes
+@item_blueprint.route("/diferenca_precos_item", methods=["GET"])
+def get_diferenca_precos_item():    
+    return jsonify(ItemDatabase().get_diferenca_precos_item()), 200
+
 # Insere um Item novo
 @item_blueprint.route("/item", methods=["POST"])
 def insere_item():
