@@ -7,7 +7,8 @@ class Quadro_FuncionariosDatabase():
     # Seleciona o quadro de todos os funcionários
     def get_quadro_funcionarios(self, campus: str, cpf: str):
         query = """
-                SELECT * FROM quadro_funcionarios qf
+                SELECT * FROM Funcionario f
+                    JOIN Quadro_Funcionarios qf ON f.CPF = qf.CPF
                 """
         if campus:
             query+=f"WHERE qf.campus = '{campus}'\n"

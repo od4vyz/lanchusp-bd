@@ -17,9 +17,16 @@ class CatalogoDatabase():
     # Seleciona todos os itens do estoque
     def get_estoque(self, campus: str):
         query = """
-                SELECT campus, nomeitem, qtdDisponivel FROM catalogo c
-                """
+                SELECT c.nomeitem, i.categoria, c.qtdDisponivel
+                    FROM Catalogo c
+                    JOIN Item i ON c.nomeitem = i.nome
+                    JOIN Lanchonete l ON c.campus = l.campus
+                    """
         query+=f"WHERE c.campus = '{campus}'"
+        query+="""
+                    ORDER BY c.qtdDisponivel ASC
+                """
+
 
         return self.db.execute_select_all(query)
     
