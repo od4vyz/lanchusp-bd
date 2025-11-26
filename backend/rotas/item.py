@@ -16,6 +16,12 @@ def get_item():
 def get_diferenca_precos_item():    
     return jsonify(ItemDatabase().get_diferenca_precos_item()), 200
 
+# Retorna itens parados no estoque
+@item_blueprint.route("/itens_parados", methods=["GET"])
+def get_itens_estoque():    
+    campus = request.args.get("campus", "")
+    return jsonify(ItemDatabase().get_itens_estoque(campus)), 200
+
 # Retorna a análise de vendas de produtos por categoria
 @item_blueprint.route("/analise_vendas_categoria", methods=["GET"])
 def get_analise_vendas_categoria():    

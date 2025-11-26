@@ -36,6 +36,21 @@ class ItemDatabase():
                 """
         return self.db.execute_select_all(query)
     
+    # Retorna itens parados no estoque (não vendidos nos últimos 30 dias)
+    def get_itens_estoque(self, campus: str):
+        query = f"""
+                SELECT C.NomeItem
+                FROM Catalogo C
+                WHERE C.Campus = '{campus}'
+                AND NOT EXISTS (
+                    SELECT 1
+                    FROM Pedido_Item PI
+                    WHERE PI.NomeItem = C.NomeItem
+                    AND PI.Campus = C.Campus
+                );
+                """
+        return self.db.execute_select_all(query)
+
     # Registra um novo Item no Banco de Dados
     def regristra_item(self, nome:str) -> bool:
         statement = f"INSERT INTO item(nome) VALUES ('{nome}');\n"
