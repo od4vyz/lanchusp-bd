@@ -1,9 +1,49 @@
 {% extends "base.html" %}
 
-{% block titulo %}Cardapio{% endblock %}
+{% block style %} <link rel="stylesheet" href="{{ url_for('static', filename='css/estoque.css') }}"> {% endblock %}
+
+{% block titulo %}Cardápio{% endblock %}
 
 {% block conteudo %}
 
-<h1>Catalogo</h1>
+<main class="main-content container">
+    
+    <section class="page-header">
+        <h1 class="page-title">Cardápio</h1>
+    </section>
+
+    <section class="table-container">
+        <div class="table-responsive">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Categoria</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in catalogo %}
+                    <tr>
+                        <td>
+                            <strong>{{ item.nomeitem }}</strong>
+                        </td>
+
+                        <td>{{ item.categoria }}</td>
+
+                        <td class="qty-highlight">R$ {{ item.preco }}</td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="4" style="text-align: center; padding: 20px;">
+                            O cardápio desta unidade está vazio.
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
 
 {% endblock %}

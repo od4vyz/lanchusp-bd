@@ -8,7 +8,7 @@ class CatalogoDatabase():
     # Seleciona todos os itens do catálogo
     def get_catalogo(self, campus: str):
         query = """
-                SELECT campus, nomeitem, preco FROM catalogo c
+                SELECT c.campus, c.nomeitem, i.categoria, c.preco FROM catalogo c LEFT JOIN Item i ON c.nomeItem = i.nome
                 """
         query+=f"WHERE c.campus = '{campus}'"
 
