@@ -19,6 +19,24 @@ class LanchoneteDatabase():
 
         return self.db.execute_select_all(query)
     
+    # Busca pelas lanchonetes de um funcionário específico
+    def get_lanchonetes_funcionario(self, cpf: str, nome: str):
+        query = """
+                SELECT L.*
+                FROM Funcionario F
+                JOIN Quadro_Funcionarios Q ON F.CPF = Q.CPF 
+                JOIN Lanchonete L ON Q.Campus = L.Campus
+                """
+        if cpf:
+            query+=f"WHERE F.CPF = '{cpf}'\n"
+        if nome:
+            if "WHERE" in query:
+                query+=f"AND F.nome = '{nome}'\n"
+            else:
+                query+=f"WHERE F.nome = '{nome}'\n"
+  
+        return self.db.execute_select_all(query)
+    
     # Registra uma lanchonete nova no Banco de Dados
     def regristra_lanchonete(self, localizacao:str, nome:str) -> bool:
         statement = f"INSERT INTO lanchonete (localizacao, nome) VALUES ('{localizacao}', '{nome}');\n"

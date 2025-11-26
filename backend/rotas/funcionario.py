@@ -11,6 +11,19 @@ def get_funcionario():
     nome = request.args.get("nome", "")
     return jsonify(FuncionarioDatabase().get_funcionario(cpf, nome)), 200
 
+# Retorna os Funcionários de uma Lanchonete
+@funcionario_blueprint.route("/funcionarios_campus", methods=["GET"])
+def get_funcionarios_lanchonete():    
+    # Parâmetros - Filtra por lanchonete
+    campus = request.args.get("campus", "")
+    return jsonify(FuncionarioDatabase().get_funcionarios_lanchonete(campus)), 200
+
+
+# Retorna os Funcionários Coringas
+@funcionario_blueprint.route("/funcionarios_coringas", methods=["GET"])
+def get_funcionarios_coringas():    
+    return jsonify(FuncionarioDatabase().get_funcionarios_coringas()), 200
+
 # Insere um Funcionário novo
 @funcionario_blueprint.route("/funcionario", methods=["POST"])
 def insere_funcionario():

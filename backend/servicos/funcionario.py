@@ -19,6 +19,45 @@ class FuncionarioDatabase():
 
         return self.db.execute_select_all(query)
     
+    # Busca pelos funcionarios de uma lanchonete específica
+    def get_funcionarios_lanchonete(self, campus: str):
+        # filtro obrigatório de lanchonete
+        if campus:
+            query = f"""
+                    SELECT *
+                    FROM Funcionario f
+                    WHERE EXISTS(
+                        SELECT *
+                        FROM Quadro_Funcionarios qf
+                        WHERE f.cpf = qf.cpf AND qf.campus = '{campus}'
+                    )
+                    """
+        return self.db.execute_select_all(query)
+    
+    # Busca pelos funcionarios de uma lanchonete específica
+    def get_funcionarios_coringas(self):
+        # filtro obrigatório de lanchonete
+        query = f"""
+                SELECT *
+                FROM Funcionario f1
+                WHERE NOT EXISTS(
+                    (
+                    SELECT Campus
+                    FROM Lanchonete l
+                    )
+                    EXCEPT
+                    (
+                    SELECT L.Campus
+                    FROM Funcionario f2
+                    JOIN Quadro_Funcionarios Q ON f2.CPF = Q.CPF 
+                    JOIN Lanchonete L ON Q.Campus = L.Campus
+                    WHERE f2.CPF = f1.CPF
+                    )
+                )
+                """
+        return self.db.execute_select_all(query)
+
+    
     # Registra um novo funcionário no Banco de Dados
     def regristra_funcionario(self, cpf:str, nome:str) -> bool:
         statement = f"INSERT INTO funcionario (CPF, nome) VALUES ('{cpf}', '{nome}');\n"

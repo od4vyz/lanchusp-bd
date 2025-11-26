@@ -12,6 +12,14 @@ def get_lanchonete():
     nome = request.args.get("nome", "")
     return jsonify(LanchoneteDatabase().get_lanchonete(localizacao, nome)), 200
 
+@lanchonete_blueprint.route("/lanchonetes_funcionario", methods=["GET"])
+def get_lanchonetes_funcionario():    
+    # Parâmetros - Filtra por funcionário
+    cpf = request.args.get("cpf", "")
+    nome = request.args.get("nome", "")
+    return jsonify(LanchoneteDatabase().get_lanchonetes_funcionario(cpf, nome)), 200
+
+
 # Insere uma Lanchonete nova
 @lanchonete_blueprint.route("/lanchonete", methods=["POST"])
 def insere_lanchonete():
