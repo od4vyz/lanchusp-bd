@@ -24,6 +24,18 @@ class ItemDatabase():
                 """
         return self.db.execute_select_all(query)
     
+    # Retorna a análise de vendas de produtos por categoria
+    def get_analise_vendas_categoria(self):
+        query = """
+                SELECT I.Categoria, SUM(PI.Quantidade) AS Qtd_Total_Vendida, SUM(PI.Quantidade * C.Preco) AS Valor_Total_Arrecadado
+                FROM Item I
+                JOIN Pedido_Item PI ON I.Nome = PI.NomeItem
+                JOIN Catalogo C ON PI.NomeItem = C.NomeItem AND PI.Campus = C.Campus
+                GROUP BY I.Categoria
+                ORDER BY Valor_Total_Arrecadado DESC;
+                """
+        return self.db.execute_select_all(query)
+    
     # Registra um novo Item no Banco de Dados
     def regristra_item(self, nome:str) -> bool:
         statement = f"INSERT INTO item(nome) VALUES ('{nome}');\n"
