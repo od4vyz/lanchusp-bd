@@ -24,6 +24,24 @@ class ClienteDatabase():
 
         return self.db.execute_select_all(query)
     
+    # Retorna os clientes VIP (total gasto > media)
+    def get_clientes_vip(self):
+        query = """
+                SELECT C.Nome, C.CPF, SUM(P.Valor) AS Total_Gasto
+                FROM Cliente C
+                JOIN Pedido P ON C.CPF = P.CPF
+                GROUP BY C.Nome, C.CPF
+                HAVING SUM(P.Valor) > (
+                    SELECT AVG(TotalGasto) AS Media
+                    FROM (
+                        SELECT SUM(Valor) AS TotalGasto
+                        FROM Pedido
+                        GROUP BY CPF
+                    ) AS Medias
+                )
+                """
+        return self.db.execute_select_all(query)
+    
     # Registra um novo cliente no Banco de Dados
     def regristra_cliente(self, cpf:str, nome:str) -> bool:
         statement = f"INSERT INTO cliente (CPF, nome) VALUES ('{cpf}', '{nome}');\n"

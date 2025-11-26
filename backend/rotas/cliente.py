@@ -13,6 +13,11 @@ def get_cliente():
     id = request.args.get("id", "")
     return jsonify(ClienteDatabase().get_cliente(cpf, nome, id)), 200
 
+# Retorna os clientes VIP (total gasto > media)
+@cliente_blueprint.route("/clientes_vip", methods=["GET"])
+def get_clientes_vip():
+    return jsonify(ClienteDatabase().get_clientes_vip()), 200
+
 # Insere um Cliente novo
 @cliente_blueprint.route("/cliente", methods=["POST"])
 def insere_cliente():
