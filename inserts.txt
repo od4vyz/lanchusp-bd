@@ -80,7 +80,10 @@ INSERT INTO Item (Nome, Categoria) VALUES
 ('Batata Frita Grande', 'Porção'), ('Milkshake Chocolate', 'Bebida'), ('Café Expresso', 'Bebida'),
 -- Produtos Industrializados/Prontos
 ('Coxinha de Frango', 'Salgado'), ('Brigadeiro', 'Doce'), 
-('Refrigerante Lata', 'Bebida'), ('Água Mineral', 'Bebida');
+('Refrigerante Lata', 'Bebida'), ('Água Mineral', 'Bebida'),
+-- Teste Produtos que nunca foram pedidos
+('Mini Pizza', 'Salgado'), ('Brownie', 'Doce'), 
+('Refrigerante Garrafa', 'Bebida'), ('Água com Gás', 'Bebida');
 
 
 -- 6. INSERINDO ARTESANAL (Antiga tabela Receita)
@@ -119,31 +122,53 @@ INSERT INTO Catalogo (Campus, NomeItem, Preco, qtdDisponivel) VALUES
 ('Av. Paulista, 1578 - Bela Vista', 'Batata Frita Grande', 18.00, 150),
 ('Av. Paulista, 1578 - Bela Vista', 'Refrigerante Lata', 8.00, 200),
 ('Av. Paulista, 1578 - Bela Vista', 'Café Expresso', 7.50, 100),
+-- Teste de Falta de Estoque
+('Av. Paulista, 1578 - Bela Vista', 'Milkshake Chocolate', 7.50, 0),
+('Av. Paulista, 1578 - Bela Vista', 'Coxinha de Frango', 5.00, 0),
+('Av. Paulista, 1578 - Bela Vista', 'Água Mineral', 3.00, 0),
+('Av. Paulista, 1578 - Bela Vista', 'Brigadeiro', 5.50, 0),
+
 -- Funchal
 ('Rua Funchal, 500 - Vila Olímpia', 'X-Burger', 25.00, 100),
 ('Rua Funchal, 500 - Vila Olímpia', 'X-Bacon', 30.00, 90),
 ('Rua Funchal, 500 - Vila Olímpia', 'Milkshake Chocolate', 22.00, 50),
 ('Rua Funchal, 500 - Vila Olímpia', 'Coxinha de Frango', 9.50, 120),
 ('Rua Funchal, 500 - Vila Olímpia', 'Água Mineral', 6.00, 150),
+-- Teste de Falta de Estoque
+('Rua Funchal, 500 - Vila Olímpia', 'Brigadeiro', 6.00, 0),
+('Rua Funchal, 500 - Vila Olímpia', 'Refrigerante Lata', 7.50, 0),
+
 -- Tatuapé
 ('Rua Tuiuti, 1620 - Tatuapé', 'X-Salada', 22.00, 100),
 ('Rua Tuiuti, 1620 - Tatuapé', 'X-Burger', 20.00, 100),
 ('Rua Tuiuti, 1620 - Tatuapé', 'Batata Frita Grande', 14.00, 100),
 ('Rua Tuiuti, 1620 - Tatuapé', 'Refrigerante Lata', 6.00, 150),
 ('Rua Tuiuti, 1620 - Tatuapé', 'Brigadeiro', 4.00, 200),
+-- Teste de Falta de Estoque
+('Rua Tuiuti, 1620 - Tatuapé', 'Água Mineral', 3.00, 0),
+('Rua Tuiuti, 1620 - Tatuapé', 'Milkshake Chocolate', 8.00, 0),
+
 -- Pinheiros
 ('Rua dos Pinheiros, 300 - Pinheiros', 'X-Bacon', 35.00, 70),
 ('Rua dos Pinheiros, 300 - Pinheiros', 'Milkshake Chocolate', 26.00, 40),
 ('Rua dos Pinheiros, 300 - Pinheiros', 'Café Expresso', 8.00, 100),
 ('Rua dos Pinheiros, 300 - Pinheiros', 'Água Mineral', 7.00, 100),
 ('Rua dos Pinheiros, 300 - Pinheiros', 'Brigadeiro', 6.50, 150),
+-- Teste de Falta de Estoque
+('Rua dos Pinheiros, 300 - Pinheiros', 'X-Burger', 32.00, 0),
+('Rua dos Pinheiros, 300 - Pinheiros', 'X-Salada', 30.00, 0),
+('Rua dos Pinheiros, 300 - Pinheiros', 'Refrigerante Lata', 9.00, 0),
+
 -- Moema
 ('Av. Ibirapuera, 3103 - Moema', 'X-Salada', 26.00, 90),
 ('Av. Ibirapuera, 3103 - Moema', 'Batata Frita Grande', 16.00, 100),
 ('Av. Ibirapuera, 3103 - Moema', 'Coxinha de Frango', 8.00, 100),
 ('Av. Ibirapuera, 3103 - Moema', 'Refrigerante Lata', 7.00, 150),
-('Av. Ibirapuera, 3103 - Moema', 'Milkshake Chocolate', 24.00, 60);
-
+('Av. Ibirapuera, 3103 - Moema', 'Milkshake Chocolate', 24.00, 60),
+-- Teste de Falta de Estoque
+('Av. Ibirapuera, 3103 - Moema', 'X-Bacon', 27.00, 0),
+('Av. Ibirapuera, 3103 - Moema', 'X-Burger', 25.00, 0),
+('Av. Ibirapuera, 3103 - Moema', 'Brigadeiro', 6.00, 0);
 
 -- INSERINDO COMPRAS E ITENS DE COMPRA
 
@@ -350,3 +375,10 @@ INSERT INTO Pedido (Campus, CPF, dataHora, Valor, meioPagamento) VALUES
 ('Av. Ibirapuera, 3103 - Moema', '11122233325', '2023-10-24 15:00:00', 7.00, 'Dinheiro');
 INSERT INTO Pedido_Item (Campus, CPF, dataHora, NomeItem, Quantidade) VALUES
 ('Av. Ibirapuera, 3103 - Moema', '11122233325', '2023-10-24 15:00:00', 'Refrigerante Lata', 1);
+
+-- Pedido 26 (Paulista) -- Teste
+INSERT INTO Pedido (Campus, CPF, dataHora, Valor, meioPagamento) VALUES
+('Av. Paulista, 1578 - Bela Vista', '11122233301', '2025-11-20 12:30:00', 1050.00, 'Cartão Crédito');
+INSERT INTO Pedido_Item (Campus, CPF, dataHora, NomeItem, Quantidade) VALUES
+('Av. Paulista, 1578 - Bela Vista', '11122233301', '2025-11-20 12:30:00', 'Brigadeiro', 100),
+('Av. Paulista, 1578 - Bela Vista', '11122233301', '2025-11-20 12:30:00', 'Coxinha de Frango', 100);
