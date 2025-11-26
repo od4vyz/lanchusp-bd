@@ -51,6 +51,17 @@ class ItemDatabase():
                 """
         return self.db.execute_select_all(query)
 
+    def get_itens_sucesso_faltantes(self):
+        query = """
+                SELECT C.NomeItem, C.Campus
+                FROM Catalogo C
+                JOIN Pedido_Item PI ON C.NomeItem = PI.NomeItem AND C.Campus = PI.Campus
+                WHERE C.qtdDisponivel = 0
+                GROUP BY C.NomeItem, C.Campus
+                HAVING SUM(PI.Quantidade) > 10;
+                """
+        return self.db.execute_select_all(query)
+
     # Registra um novo Item no Banco de Dados
     def regristra_item(self, nome:str) -> bool:
         statement = f"INSERT INTO item(nome) VALUES ('{nome}');\n"

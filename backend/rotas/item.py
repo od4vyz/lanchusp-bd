@@ -27,6 +27,11 @@ def get_itens_estoque():
 def get_analise_vendas_categoria():    
     return jsonify(ItemDatabase().get_analise_vendas_categoria()), 200
 
+#  Retorna itens de sucesso que devem ser reabastecidos (estoque abaixo de 10 unidades)
+@item_blueprint.route("/itens_sucesso_faltantes", methods=["GET"])
+def get_itens_sucesso_faltantes():
+    return jsonify(ItemDatabase().get_itens_sucesso_faltantes()), 200
+
 # Insere um Item novo
 @item_blueprint.route("/item", methods=["POST"])
 def insere_item():
