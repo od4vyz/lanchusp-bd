@@ -1,3 +1,11 @@
+/* --- FIX DE RODAPÉ (FOOTER) - OBRIGATÓRIO --- */
+html, body {
+    height: 100%; /* Garante que a página tenha no mínimo a altura da tela */
+    margin: 0;
+    display: flex;       /* Transforma o corpo da página em um layout flexível */
+    flex-direction: column; /* Organiza os elementos (nav, main, footer) em coluna */
+}
+
 /* Destaque para a página atual (RH) */
 .main-nav li.active a {
     background-color: var(--color-teal-primary);
@@ -96,3 +104,4 @@
 }
 .status-ativo { background-color: #d1fae5; color: #065f46; } /* Verde claro */
 .status-inativo { background-color: #f3f4f6; color: #6b7280; } /* Cinza claro */
+

@@ -13,6 +13,7 @@ def render_funcionarios(campus):
 
     return render_template("funcionario.html", funcionarios=quadro_funcionarios, lanchonete={"campus": campus})
 
+
 # # Retorna um Funcionário
 # @funcionario_blueprint.route("/funcionario", methods=["GET"])   
 # def get_funcionario():    
