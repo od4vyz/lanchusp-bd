@@ -19,6 +19,11 @@ def get_funcionarios_lanchonete():
     return jsonify(FuncionarioDatabase().get_funcionarios_lanchonete(campus)), 200
 
 
+# Retorna a média salarial dos Funcionários por cargo
+@funcionario_blueprint.route("/media_salarial_cargo", methods=["GET"])
+def get_media_salarial_cargo():    
+    return jsonify(FuncionarioDatabase().get_media_salarial_cargo()), 200
+
 # Retorna os Funcionários Coringas
 @funcionario_blueprint.route("/funcionarios_coringas", methods=["GET"])
 def get_funcionarios_coringas():    

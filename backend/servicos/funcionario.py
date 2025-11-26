@@ -56,6 +56,17 @@ class FuncionarioDatabase():
                 )
                 """
         return self.db.execute_select_all(query)
+    
+    def get_media_salarial_cargo(self):
+        query = f"""
+                SELECT Cargo, 
+                AVG(Salario) AS Media_Salarial, 
+                COUNT(*) AS Qtd_Funcionarios
+                FROM Quadro_Funcionarios
+                GROUP BY Cargo
+                HAVING COUNT(*) > 2;
+                """
+        return self.db.execute_select_all(query)
 
     
     # Registra um novo funcionário no Banco de Dados
