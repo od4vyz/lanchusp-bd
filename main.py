@@ -3,6 +3,7 @@ from flask_cors import CORS
 from servicos.lanchonete import LanchoneteDatabase
 from rotas.funcionario import funcionario_blueprint
 from rotas.lanchonete import lanchonete_blueprint
+from rotas.funcionario import turno_blueprint
 
 # from rotas.produto_pronto import produtoPronto_blueprint
 
@@ -19,5 +20,6 @@ def home():
 # Registro das Rotas
 app.register_blueprint(funcionario_blueprint)
 app.register_blueprint(lanchonete_blueprint) 
+app.register_blueprint(turno_blueprint)
 # app.register_blueprint(produtoPronto_blueprint)
 app.run("0.0.0.0", port=8000, debug=False)

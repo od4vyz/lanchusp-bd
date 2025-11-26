@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block style %} <link rel="stylesheet" href="{{ url_for('static', filename='css/funcionario.css') }}"> {% endblock %}
+{% block titulo %}RH - Turnos{% endblock %}
+
+{% block conteudo %}
+<main class="main-content container">
+    <section class="page-header">
+        <h1 class="page-title">Turnos - {{ lanchonete.campus }}</h1>
+        <a href="{{ url_for('funcionario.render_funcionarios', campus=lanchonete.campus) }}" class="btn-add-new">
+            Voltar ao RH
+        </a>
+    </section>
+
+    <section class="table-container">
+        <div class="table-responsive">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Campus</th>
+                        <th>Turno</th>
+                        <th>Qtd Funcionários</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in funcionarios %}
+                    <tr>
+                        <td>{{ row.campus or row.Campus }}</td>
+                        <td>{{ row.turno or row.Turno }}</td>
+                        <td>{{ row.qtd_funcionarios or row.Qtd_Funcionarios }}</td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="3" style="text-align:center; padding:20px;">Nenhum turno encontrado.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
+{% endblock %}

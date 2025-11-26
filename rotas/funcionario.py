@@ -1,9 +1,11 @@
 from flask import Blueprint, jsonify, request, render_template
 
+from servicos import quadro_funcionarios
 from servicos.funcionario import FuncionarioDatabase
 from servicos.quadro_funcionarios import Quadro_FuncionariosDatabase
 
 funcionario_blueprint = Blueprint("funcionario", __name__)
+turno_blueprint = Blueprint("turno", __name__)
 
 # Renderiza a pagina HTML
 @funcionario_blueprint.route("/<string:campus>/rh", methods=["GET"])
@@ -12,6 +14,13 @@ def render_funcionarios(campus):
     quadro_funcionarios = Quadro_FuncionariosDatabase().get_quadro_funcionarios(campus, "")
 
     return render_template("funcionario.html", funcionarios=quadro_funcionarios, lanchonete={"campus": campus})
+
+# Rendera a pagina HTML de turnos
+@turno_blueprint.route("/<string:campus>/turnos", methods=["GET"])
+def render_turnos(campus):
+    # obtém agregação dos turnos do serviço/DB
+    funcionarios = FuncionarioDatabase().get_funcionarios_turno(campus)
+    return render_template("turno.html", funcionarios=funcionarios, lanchonete={"campus": campus})
 
 
 # # Retorna um Funcionário
@@ -46,6 +55,10 @@ def render_funcionarios(campus):
 #         return jsonify("Não foi possível solicitar a remoção do funcionário"), 400
 
 #     return jsonify("Remoção do funcionário solicitada com sucesso!"), 200
+
+# @funcionario_blueprint.route("/funcionarios_turno", methods=["GET"])
+# def get_funcionarios_turno():    
+#     return jsonify(FuncionarioDatabase().get_funcionarios_turno()), 200
 
 # # Atualiza um Funcionario
 # @funcionario_blueprint.route("/funcionario", methods=["PUT"])
