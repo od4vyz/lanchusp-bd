@@ -1,4 +1,3 @@
-
 -- 1. INSERINDO LANCHONETES (Campus)
 
 INSERT INTO Lanchonete (Campus, Nome) VALUES 
@@ -95,9 +94,9 @@ INSERT INTO Artesanal (Nome, tempoPreparo) VALUES
 ('Café Expresso', '3');
 
 
--- INSERINDO UTILIZA 
+-- INSERINDO RECEITA
 
-INSERT INTO Utiliza (NomeArtesanal, NomeIngrediente, Quantidade) VALUES
+INSERT INTO Receita (NomeArtesanal, NomeIngrediente, Quantidade) VALUES
 ('X-Salada', 'Pão de Hamburguer', 1), ('X-Salada', 'Carne Bovina', 1), 
 ('X-Salada', 'Queijo Prato', 2), ('X-Salada', 'Alface Americana', 1), 
 ('X-Salada', 'Tomate', 2), ('X-Salada', 'Maionese da Casa', 1),

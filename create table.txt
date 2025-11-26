@@ -27,7 +27,6 @@ CREATE TABLE Item (
     CONSTRAINT PK_Item PRIMARY KEY (Nome)
 );
 
-
 -- 5. QUADRO_FUNCIONARIOS
 CREATE TABLE Quadro_Funcionarios (
     Campus VARCHAR(100) NOT NULL,
@@ -71,7 +70,6 @@ CREATE TABLE Catalogo (
         ON DELETE RESTRICT
 );
 
-
 -- 7. COMPRA
 CREATE TABLE Compra (
     Campus VARCHAR(100) NOT NULL,
@@ -107,7 +105,6 @@ CREATE TABLE Pedido (
         ON UPDATE CASCADE
         ON DELETE RESTRICT
 );
-
 
 -- 9. COMPRA_ITEM
 CREATE TABLE Compra_Item (
@@ -152,7 +149,6 @@ CREATE TABLE Pedido_Item (
         ON DELETE RESTRICT
 );
 
-
 -- 11. ARTESANAL (Subclasse de Item - Produto Final)
 CREATE TABLE Artesanal (
     Nome VARCHAR(100) NOT NULL,
@@ -166,22 +162,22 @@ CREATE TABLE Artesanal (
         ON DELETE CASCADE
 );
 
--- 12. UTILIZA (Relacionamento Artesanal -> Ingredientes)
-CREATE TABLE Utiliza (
+-- 12. RECEITA (Relacionamento Artesanal -> Ingredientes)
+CREATE TABLE Receita (
     NomeArtesanal VARCHAR(100) NOT NULL,
     NomeIngrediente VARCHAR(100) NOT NULL,
     Quantidade INT NOT NULL,
     
-    CONSTRAINT PK_Utiliza PRIMARY KEY (NomeArtesanal, NomeIngrediente),
+    CONSTRAINT PK_Receita PRIMARY KEY (NomeArtesanal, NomeIngrediente),
     
     -- Chave estrangeira para o produto final
-    CONSTRAINT FK_Utiliza_Artesanal FOREIGN KEY (NomeArtesanal) 
+    CONSTRAINT FK_Receita_Artesanal FOREIGN KEY (NomeArtesanal) 
         REFERENCES Artesanal(Nome)
         ON UPDATE CASCADE
         ON DELETE CASCADE,
         
     -- Chave estrangeira para o ingrediente 
-    CONSTRAINT FK_Utiliza_Ingrediente FOREIGN KEY (NomeIngrediente) 
+    CONSTRAINT FK_Receita_Ingrediente FOREIGN KEY (NomeIngrediente) 
         REFERENCES Item(Nome)
         ON UPDATE CASCADE
         ON DELETE RESTRICT
