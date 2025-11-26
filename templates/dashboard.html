@@ -1,9 +1,157 @@
 {% extends "base.html" %}
 
-{% block titulo %}Início{% endblock %}
+{% block style %} <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}"> {% endblock %}
+
+{% block titulo %}Dashboard{% endblock %}
 
 {% block conteudo %}
 
-<h1>Dashboard</h1>
+<main class="main-content container">
+    
+    <!-- Cabeçalho com Título e KPI -->
+    <section class="dashboard-header">
+        <h1 class="page-title">Dashboard</h1>
+        
+        <!-- Destaque para o Valor Médio (KPI) -->
+        <div class="kpi-card">
+            <div class="kpi-icon">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="kpi-info">
+                <h3>Ticket Médio Global</h3>
+                <p class="kpi-value">R$ {{ media.media }}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid Principal: Organiza as tabelas em 2 colunas -->
+    <div class="dashboard-grid">
+
+        <!-- CARD 1: Clientes VIP -->
+        <section class="dashboard-card">
+            <div class="card-header">
+                <h2><i class="fas fa-crown"></i> Clientes VIP</h2>
+            </div>
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>CPF</th>
+                            <th>Total Gasto</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for cliente in clienteVip %}
+                        <tr>
+                            <td><strong>{{ cliente.nome }}</strong></td>
+                            <td class="text-muted">{{ cliente.cpf }}</td>
+                            <td class="qty-highlight">R$ {{ cliente.total_gasto }}</td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="3" class="empty-state">Sem dados registrados.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- CARD 3: Folha de Pagamento -->
+        <section class="dashboard-card">
+            <div class="card-header">
+                <h2><i class="fas fa-users"></i> RH & Salários</h2>
+            </div>
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Cargo</th>
+                            <th>Média Salarial</th>
+                            <th>Equipe</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for cargo in folhaPagamento %}
+                        <tr>
+                            <td><strong>{{ cargo.cargo }}</strong></td>
+                            <td>R$ {{ cargo.media_salarial }}</td>
+                            <td>{{ cargo.qtd_funcionarios }}</td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="3" class="empty-state">Sem dados registrados.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- CARD 2: Análise de Vendas -->
+        <section class="dashboard-card">
+            <div class="card-header">
+                <h2><i class="fas fa-shopping-cart"></i> Desempenho por Categoria</h2>
+            </div>
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Categoria</th>
+                            <th>Qtd. Vendida</th>
+                            <th>Receita Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for venda in analiseVendas %}
+                        <tr>
+                            <td><strong>{{ venda.categoria }}</strong></td>
+                            <td>{{ venda.qtd_total_vendida }}</td>
+                            <td class="qty-highlight">R$ {{ venda.valor_total_arrecadado }}</td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="3" class="empty-state">Sem dados registrados.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- CARD 4: Eficiência do Menu -->
+        <section class="dashboard-card">
+            <div class="card-header">
+                <h2><i class="fas fa-utensils"></i> Eficiência do Menu</h2>
+            </div>
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Categoria</th>
+                            <th>Variedade</th>
+                            <th>Faturamento Histórico</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in eficiencia %}
+                        <tr>
+                            <td><strong>{{ item.categoria }}</strong></td>
+                            <td class="text-center">{{ item.variedade_itens_no_cardapio }} itens</td>
+                            <td class="qty-highlight">R$ {{ item.faturamento_total_historico }}</td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="3" class="empty-state">Sem dados registrados.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </div>
+</main>
 
 {% endblock %}

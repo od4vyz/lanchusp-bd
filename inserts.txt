@@ -376,9 +376,9 @@ INSERT INTO Pedido (Campus, CPF, dataHora, Valor, meioPagamento) VALUES
 INSERT INTO Pedido_Item (Campus, CPF, dataHora, NomeItem, Quantidade) VALUES
 ('Av. Ibirapuera, 3103 - Moema', '11122233325', '2023-10-24 15:00:00', 'Refrigerante Lata', 1);
 
--- Pedido 26 (Paulista) -- Teste
+--Pedido 26 (Paulista) -- Teste
 INSERT INTO Pedido (Campus, CPF, dataHora, Valor, meioPagamento) VALUES
-('Av. Paulista, 1578 - Bela Vista', '11122233301', '2025-11-20 12:30:00', 1050.00, 'Cartão Crédito');
+('Av. Paulista, 1578 - Bela Vista', '11122233301', '2025-11-20 12:30:00', 105.00, 'Cartão Crédito');
 INSERT INTO Pedido_Item (Campus, CPF, dataHora, NomeItem, Quantidade) VALUES
-('Av. Paulista, 1578 - Bela Vista', '11122233301', '2025-11-20 12:30:00', 'Brigadeiro', 100),
-('Av. Paulista, 1578 - Bela Vista', '11122233301', '2025-11-20 12:30:00', 'Coxinha de Frango', 100);
+('Av. Paulista, 1578 - Bela Vista', '11122233301', '2025-11-20 12:30:00', 'Brigadeiro', 10),
+('Av. Paulista, 1578 - Bela Vista', '11122233301', '2025-11-20 12:30:00', 'Coxinha de Frango', 10);
