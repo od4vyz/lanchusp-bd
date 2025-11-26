@@ -4,7 +4,7 @@ class FuncionarioDatabase():
     def __init__(self, db_provider = DatabaseManager()):
         self.db = db_provider
 
-    # Busca pelo funcionario usando o cpf ou nome
+    # Seleciona todos os funcionários
     def get_funcionario(self, cpf: str, nome: str):
         query = """
                 SELECT * FROM funcionario f

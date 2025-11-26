@@ -87,12 +87,12 @@ INSERT INTO Item (Nome, Categoria) VALUES
 -- 6. INSERINDO ARTESANAL (Antiga tabela Receita)
 
 INSERT INTO Artesanal (Nome, tempoPreparo) VALUES
-('X-Salada', '15 minutes'),
-('X-Bacon', '18 minutes'),
-('X-Burger', '12 minutes'),
-('Batata Frita Grande', '10 minutes'),
-('Milkshake Chocolate', '8 minutes'),
-('Café Expresso', '3 minutes');
+('X-Salada', '15'),
+('X-Bacon', '18'),
+('X-Burger', '12'),
+('Batata Frita Grande', '10'),
+('Milkshake Chocolate', '8'),
+('Café Expresso', '3');
 
 
 -- INSERINDO UTILIZA 

@@ -4,7 +4,7 @@ class ClienteDatabase():
     def __init__(self, db_provider = DatabaseManager()):
         self.db = db_provider
 
-    # Busca pelo cliente usando o cpf, nome ou número do cliente
+    # Seleciona todos os clientes
     def get_cliente(self, cpf: str, nome: str, id):
         query = """
                 SELECT * FROM cliente c

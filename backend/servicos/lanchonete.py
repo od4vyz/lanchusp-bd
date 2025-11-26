@@ -4,13 +4,13 @@ class LanchoneteDatabase():
     def __init__(self, db_provider = DatabaseManager()):
         self.db = db_provider
 
-    # Busca pela lanchonete usando a localização ou o nome
-    def get_lanchonete(self, localizacao: str, nome: str):
+    # Seleciona todas as lanchonetes
+    def get_lanchonete(self, campus: str, nome: str):
         query = """
                 SELECT * FROM lanchonete l
                 """
-        if localizacao:
-            query+=f"WHERE l.localizacao = '{localizacao}'\n"
+        if campus:
+            query+=f"WHERE l.campus = '{campus}'\n"
         if nome:
             if "WHERE" in query:
                 query+=f"AND l.nome = '{nome}'\n"

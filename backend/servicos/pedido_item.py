@@ -1,13 +1,13 @@
 from servicos.database.conector import DatabaseManager
 
-class ReceitaDatabase():
+class Compra_ItemDatabase():
     def __init__(self, db_provider = DatabaseManager()):
         self.db = db_provider
 
-    # Seleciona todas os itens que compôem a receita de algum item artesanal
-    def get_receita(self):
+    # Seleciona todas os itens de todos os pedidos de todas as lanchonetes
+    def get_pedido_item(self):
         query = """
-                SELECT * FROM Receita r
+                SELECT * FROM Pedido_Item pi
                 """
 
         return self.db.execute_select_all(query)

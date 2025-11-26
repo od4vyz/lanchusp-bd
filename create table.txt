@@ -156,7 +156,7 @@ CREATE TABLE Pedido_Item (
 -- 11. ARTESANAL (Subclasse de Item - Produto Final)
 CREATE TABLE Artesanal (
     Nome VARCHAR(100) NOT NULL,
-    tempoPreparo INTERVAL,
+    tempoPreparo INT, -- Minutos
     
     CONSTRAINT PK_Artesanal PRIMARY KEY (Nome),
     

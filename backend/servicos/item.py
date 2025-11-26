@@ -4,13 +4,18 @@ class ItemDatabase():
     def __init__(self, db_provider = DatabaseManager()):
         self.db = db_provider
 
-    # Busca pelo Item usando o nome
-    def get_item(self, nome: str):
+    # Seleciona todos os itens
+    def get_item(self, nome: str, categoria:str):
         query = """
                 SELECT * FROM item i
                 """
         if nome:
             query+=f"WHERE i.nome = '{nome}'\n"
+        if categoria:
+            if "WHERE" in query:
+                query+=f"AND i.Categoria = '{categoria}'\n"
+            else:
+                query+=f"WHERE i.Categoria = '{categoria}'\n"
 
         return self.db.execute_select_all(query)
     
