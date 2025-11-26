@@ -1,0 +1,182 @@
+/* --- Definição de Variáveis --- */
+:root {
+    --color-teal-primary: #0097b2;
+    --color-teal-dark: #007a91;    
+    --color-orange-primary: #f39200; 
+    --color-orange-hover: #d68100;  
+
+    --color-gray-bg: #dedede;       
+    --color-text-dark: #333333;   
+    --color-white: #ffffff;     
+
+    /* Configurações de Layout */
+    --header-height: 70px;
+    --container-width: 1200px;
+}
+
+/* --- Reset Básico e Estilos Globais --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-gray-bg);
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Classe utilitária para centralizar conteúdo na tela */
+.container {
+    width: 95%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- HEADER --- */
+.main-header {
+    background-color: var(--color-white);
+    height: var(--header-height);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    background-image: linear-gradient(to right, var(--color-teal-primary) 50%, var(--color-orange-primary) 50%);
+    background-size: 100% 4px;
+    background-repeat: no-repeat;
+    background-position: top left;
+    
+    position: sticky; /* Mantém o header no topo ao rolar */
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+/* Estilo da Logo */
+.brand-logo img {
+    height: 45px; /* Ajuste a altura conforme necessário para equilibrar */
+    width: auto;
+    display: block;
+}
+
+/* --- NAVBAR --- */
+.main-nav ul {
+    display: flex;
+    gap: 5px; /* Espaço entre os itens do menu */
+}
+
+.main-nav a {
+    display: block;
+    padding: 8px 16px;
+    color: var(--color-text-dark);
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 4px;
+}
+
+/* Efeito de Hover Padrão (Turquesa) */
+.main-nav a:hover {
+    color: var(--color-white);
+    background-color: var(--color-teal-primary);
+}
+
+/* Destaque para o item 'Catálogo' (usando o Laranja da paleta) */
+.nav-item-catalogo a:hover {
+    background-color: var(--color-orange-primary) !important;
+    color: var(--color-white);
+}
+
+/* --- MAIN CONTENT PLACEHOLDER --- */
+/* Área de conteúdo principal: ocupa o espaço disponível para empurrar o footer */
+.main-content {
+    flex: 1;
+    padding: 40px 0;
+}
+
+/* Exemplo de caixa de conteúdo para contrastar com o fundo cinza #dedede */
+.content-box {
+    background-color: var(--color-white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.content-box h1 {
+    color: var(--color-teal-dark);
+    margin-bottom: 15px;
+}
+
+
+/* --- FOOTER --- */
+.main-footer {
+    /* Usando a cor turquesa sólida para o rodapé para um fechamento forte */
+    background-color: var(--color-teal-dark);
+    color: var(--color-white);
+    padding: 20px 0;
+    font-size: 0.9rem;
+    margin-top: auto; /* Garante que fique no final da página se houver pouco conteúdo */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links a {
+    color: rgba(255,255,255,0.7);
+    margin-left: 20px;
+    font-size: 0.85rem;
+}
+
+.footer-links a:hover {
+    color: var(--color-white);
+}
+
+/* --- Responsividade Básica para Celulares --- */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+    .main-header {
+        height: auto; /* Altura automática para acomodar logo e menu empilhados */
+        background-image: none; /* Remove a borda colorida no mobile */
+        border-top: 4px solid var(--color-teal-primary);
+    }
+    .brand-logo {
+        margin-bottom: 10px;
+    }
+    .main-nav ul {
+        gap: 2px;
+    }
+    .main-nav a {
+        padding: 8px 10px;
+        font-size: 0.85rem;
+    }
+    .footer-content {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    .footer-links a {
+        margin: 0 10px;
+    }
+}

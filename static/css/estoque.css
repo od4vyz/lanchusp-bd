@@ -1,0 +1,65 @@
+/* --- (REUTILIZADO) Estrutura da Página --- */
+.main-content { flex: 1; padding: 40px 0; }
+.page-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+.page-title { font-size: 1.8rem; color: var(--color-teal-dark); font-weight: 700; }
+.btn-add-new {
+    background-color: var(--color-orange-primary); color: var(--color-white);
+    padding: 10px 20px; border-radius: 5px; font-weight: 600;
+    display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-add-new:hover { background-color: #d68100; }
+
+/* --- (REUTILIZADO) Estilos da Tabela --- */
+.table-container {
+    background-color: var(--color-white); border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden;
+}
+.table-responsive { width: 100%; overflow-x: auto; }
+.data-table { width: 100%; border-collapse: collapse; white-space: nowrap; }
+.data-table thead { background-color: var(--color-teal-primary); color: var(--color-white); }
+.data-table th { padding: 15px 20px; text-align: left; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; }
+.data-table td { padding: 15px 20px; border-bottom: 1px solid var(--color-border); color: var(--color-text-dark); font-size: 0.95rem; vertical-align: middle; }
+.data-table tbody tr:nth-child(even) { background-color: #f8f9fa; }
+.data-table tbody tr:hover { background-color: var(--color-teal-light); }
+.action-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 32px; height: 32px; border-radius: 50%; margin-right: 5px;
+    background-color: #f3f4f6; color: var(--color-text-light); transition: all 0.2s;
+}
+.action-btn.edit:hover { background-color: var(--color-teal-primary); color: white; }
+.action-btn.delete:hover { background-color: #ef4444; color: white; }
+
+/* --- ESTILOS ESPECÍFICOS PARA ESTOQUE --- */
+
+/* Miniatura do produto na tabela */
+.product-thumbnail {
+    width: 50px; height: 50px;
+    object-fit: cover; /* Garante que a imagem preencha o quadrado sem distorcer */
+    border-radius: 8px;
+    border: 2px solid var(--color-border);
+    background-color: #f0f0f0; /* Fundo caso a imagem demore a carregar */
+}
+
+/* Destaque para a quantidade */
+.qty-highlight { font-weight: 700; color: var(--color-text-dark); }
+
+/* Badges de Status de Estoque */
+.status-badge { padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; display: inline-block; }
+.estoque-alto { background-color: var(--status-green-bg); color: var(--status-green-text); }
+.estoque-baixo { background-color: var(--status-yellow-bg); color: var(--status-yellow-text); }
+.estoque-esgotado { background-color: var(--status-red-bg); color: var(--status-red-text); }
+
+
+/* --- (REUTILIZADO) FOOTER PADRÃO --- */
+.main-footer { background-color: var(--color-teal-dark); color: var(--color-white); padding: 20px 0; font-size: 0.9rem; margin-top: auto; }
+.footer-content { display: flex; justify-content: space-between; align-items: center; }
+.footer-links a { color: rgba(255,255,255,0.7); margin-left: 20px; }
+.footer-links a:hover { color: var(--color-white); }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header-content { flex-direction: column; padding: 10px 0; }
+    .main-header { height: auto; background-image: none; border-top: 4px solid var(--color-teal-primary); }
+    .page-header { flex-direction: column; align-items: flex-start; gap: 15px; }
+    .btn-add-new { width: 100%; justify-content: center; }
+}

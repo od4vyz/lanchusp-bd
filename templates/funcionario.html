@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block style %} <link rel="stylesheet" href="{{ url_for('static', filename='css/funcionario.css') }}"> {% endblock %}
+
+{% block titulo %}RH{% endblock %}
+
+{% block conteudo %}
+
+<main class="main-content container">
+        
+        <section class="page-header">
+            <h1 class="page-title">Colaboradores</h1>
+            <a href="#" class="btn-add-new">
+                <i class="fas fa-plus"></i> Ver Turnos
+            </a>
+        </section>
+
+        <section class="table-container">
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>CPF</th>
+                            <th>Nome Completo</th>
+                            <th>Cargo</th>
+                            <th>Salário</th>
+                            <th>Data Admissão</th>
+                            <th>Carga Horária</th>
+                            <th>Entrada</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for func in funcionarios %}
+                        <tr>
+                            <td>{{ func.cpf }}</td>
+
+                            <td>
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <strong>{{ func.nome }}</strong>
+                                </div>
+                            </td>
+
+                            <td>{{ func.cargo }}</td>
+
+                            <td>R$ {{ func.salario }}</td>
+
+                            <td>{{ func.dataadmissao }}</td>
+
+                            <td>
+                                <span class="status-badge status-ativo">{{ func.cargahoraria }}h Semanais</span>
+                            </td>
+
+                            <td>{{ func.horarioentrada }}</td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="8" style="text-align: center; padding: 20px;">
+                                Nenhum funcionário encontrado nesta lanchonete.
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+{% endblock %}
+    

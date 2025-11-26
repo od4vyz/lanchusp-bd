@@ -1,0 +1,98 @@
+/* Destaque para a página atual (RH) */
+.main-nav li.active a {
+    background-color: var(--color-teal-primary);
+    color: var(--color-white);
+}
+
+/* --- CONTEÚDO PRINCIPAL --- */
+.main-content { flex: 1; padding: 40px 0; }
+
+/* --- ESTILOS ESPECÍFICOS DA PÁGINA DE FUNCIONÁRIOS --- */
+
+/* Cabeçalho da Seção (Título e Botão de Adicionar) */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.page-title {
+    font-size: 1.8rem;
+    color: var(--color-teal-dark);
+    font-weight: 700;
+}
+.btn-add-new {
+    background-color: var(--color-orange-primary);
+    color: var(--color-white);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.btn-add-new:hover { background-color: #d68100; }
+
+/* Container da Tabela (Fundo branco para destacar do fundo cinza) */
+.table-container {
+    background-color: var(--color-white);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    overflow: hidden; /* Garante que as bordas arredondadas funcionem na tabela */
+}
+
+/* Responsividade da tabela: permite rolagem horizontal em telas pequenas */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* --- ESTILOS DA TABELA --- */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap; /* Evita quebra de linha em células pequenas */
+}
+
+/* Cabeçalho da Tabela (thead) */
+.data-table thead {
+    background-color: var(--color-teal-primary); /* Usa a cor da marca */
+    color: var(--color-white);
+}
+.data-table th {
+    padding: 15px 20px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Corpo da Tabela (tbody) */
+.data-table td {
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-dark);
+    font-size: 0.95rem;
+}
+
+/* Efeito Zebrado (linhas alternadas) */
+.data-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* Efeito Hover na linha */
+.data-table tbody tr:hover {
+    background-color: var(--color-teal-light); /* Um tom bem claro de turquesa */
+}
+
+/* Estilo para Badges de Status */
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+}
+.status-ativo { background-color: #d1fae5; color: #065f46; } /* Verde claro */
+.status-inativo { background-color: #f3f4f6; color: #6b7280; } /* Cinza claro */

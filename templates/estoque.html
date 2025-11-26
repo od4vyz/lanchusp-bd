@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block style %} <link rel="stylesheet" href="{{ url_for('static', filename='css/estoque.css') }}"> {% endblock %}
+
+{% block titulo %}Estoque{% endblock %}
+
+{% block conteudo %}
+
+<main class="main-content container">
+    
+    <section class="page-header">
+        <h1 class="page-title">Controle de Estoque</h1>
+        <a href="#" class="btn-add-new">
+            <i class="fas fa-box"></i> Novo Produto
+        </a>
+    </section>
+
+    <section class="table-container">
+        <div class="table-responsive">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Categoria</th>
+                        <th>Qtd. Atual</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in estoque %}
+                    <tr>
+                        <td>
+                            <strong>{{ item.nomeitem }}</strong>
+                        </td>
+
+                        <td>{{ item.categoria }}</td>
+
+                        <td class="qty-highlight">{{ item.qtddisponivel }} un.</td>
+
+                        <td>
+                            {% if item.qtddisponivel == 0 %}
+                                <span class="status-badge status-inativo">Esgotado</span>
+                            
+                            {% elif item.qtddisponivel < 20 %}
+                                <span class="status-badge status-alerta" style="background-color: #f39c12; color: white;">Baixo Estoque</span>
+                            
+                            {% else %}
+                                <span class="status-badge status-ativo">Em Estoque</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="4" style="text-align: center; padding: 20px;">
+                            O estoque desta unidade está vazio.
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
+
+{% endblock %}

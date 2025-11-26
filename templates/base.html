@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    {% block style %}{% endblock%}
+    <title>LanchUSP - {% block titulo %}{% endblock %}</title>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container header-content">
+            <a href="#" class="brand-logo">
+                <img src="{{ url_for('static', filename='img/logoTransparente.png') }}" alt="LanchUSP Logo">
+            </a>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="{{ url_for('funcionario.render_funcionarios', campus=lanchonete.campus) }}">RH</a></li>
+                    <li><a href="{{ url_for('lanchonete.render_estoque', campus=lanchonete.campus) }}">Estoque</a></li>
+                    <li><a href="{{ url_for('lanchonete.render_dashboard', campus=lanchonete.campus) }}">Dashboard</a></li>
+                    <li class="nav-item-catalogo"><a href="{{ url_for('lanchonete.render_catalogo', campus=lanchonete.campus) }}">Catálogo</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {% block conteudo %}
+        
+        {% endblock %}
+    </main>
+
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <p>&copy; 2025 LanchUSP. Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <a href="#">Termos de Uso</a>
+                <a href="#">Privacidade</a>
+                <a href="#">Suporte</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
