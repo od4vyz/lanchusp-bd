@@ -11,17 +11,19 @@ Requisitos:
   - Desktop development with C++
 
 ## Configuração do Ambiente
-Na pasta backend:
+Na pasta do projeto:
 ```bash
 python -m venv venv 
 .\venv\Scripts\activate
 pip install -r requirements.txt
 ```  
-Criar uma Database no PostgreSQL com o nome "lanchusp"  
-Configurar em backend\servicos\database\conector.py o usuário e senha do seu pgAdmin  
+Criar uma Database no PostgreSQL com o nome "lanchusp" usando o script de "create table.txt"  
+Popular o banco de dados com os inserts do arquivo "inserts.txt"  
+Adicionar no arquivo \servicos\database\conector.py o usuário e senha do seu pgAdmin  
 
-## Execução Backend
-Na pasta backend:
+## Execução do Projeto
+Na pasta do projeto:
 ```bash
 python main.py
 ```
+Abrir no navegador o endereço: http://127.0.0.1:8000/
